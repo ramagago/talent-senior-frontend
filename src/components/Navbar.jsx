@@ -2,6 +2,8 @@ import logoImage from "../img/ts-logo-navbar.png";
 import { CiMenuBurger } from "react-icons/ci";
 import { useState } from "react";
 
+// hice un cambio en el Nav
+
 const Navbar = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
