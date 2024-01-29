@@ -8,6 +8,9 @@ export default {
         celeste01: "#318fd0",
         rosado01: "#d6408e",
       },
+      screens: {
+        mobile: "380px",
+      },
     },
   },
   plugins: [],

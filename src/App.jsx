@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import MainBanner from "./components/MainBanner";
 import Services from "./components/Services";
 import Team from "./components/Team";
-import imgBanner from "./img/ts-banner-team.png";
 import Purpose from "./components/Purpose";
 import Ambassadors from "./components/Ambassadors";
 import Testimonials from "./components/Testimonials";
@@ -12,22 +11,16 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div className="w-screen bg-white flex flex-col items-center  ">
       <Navbar />
       <MainBanner />
       <Services />
       <Team />
-      <div className="relative top-48">
-        <img
-          src={imgBanner}
-          alt="Dos personas en una oficina saludandose"
-          className="h-96 w-screen object-cover relative "
-        />
-      </div>
       <Purpose />
-      <Ambassadors />
+      <Ambassadors className="w-screen xl:w-[1280px]" />
       <Testimonials />
       <Contact />
+
       <Footer />
     </div>
   );

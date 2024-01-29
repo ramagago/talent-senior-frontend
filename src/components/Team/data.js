@@ -26,8 +26,7 @@ export const collaboratorsData = [
     img: imgCamilaFernandez,
     label: "Camila Fernandez",
     title: "Psicóloga",
-    linkedin:
-      "https://www.linkedin.com/search/results/all/?fetchDeterministicClustersOnly=true&heroEntityKey=urn%3Ali%3Afsd_profile%3AACoAABztuu8BtcPcwEDzZqDfKXoRpzrZEHaU_rQ&keywords=camila%20fernandez&origin=RICH_QUERY_SUGGESTION&position=0&searchId=3076b476-a6c0-4883-9846-93c08f3ba5a6&sid=b_C",
+    linkedin: "https://www.linkedin.com/in/camila-fernandez-213659116/",
   },
   {
     img: imgAlvaroMatteo,
