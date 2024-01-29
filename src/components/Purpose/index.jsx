@@ -19,5 +19,3 @@ const Purpose = () => {
     </div>
   );
 };
-
-export default Purpose;
