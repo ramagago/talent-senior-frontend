@@ -1,18 +1,20 @@
 import PropTypes from "prop-types";
+import { RxCross1 } from "react-icons/rx";
 
 const ServicesInfo = ({ selectedService, selectedServiceInfo, onClose }) => {
   return (
-    <div className="w-screen  h-screen bg-black/60 z-50 fixed flex flex-col justify-center items-center">
-      <div className="flex w-full justify-end items-end lg:max-w-[740px]">
-        <button className="m-4 text-3xl text-white" onClick={onClose}>
-          X
+    <div className="w-screen  h-screen bg-black/60 z-50 fixed flex flex-col justify-center items-center px-10">
+      <div className=" relative bg-white rounded-3xl w-full max-w-4xl flex flex-col ">
+        <button
+          className="absolute top-10 right-10 text-3xl hover:text-gray-300"
+          onClick={onClose}
+        >
+          <RxCross1 />
         </button>
-      </div>
-      <div className="bg-white rounded-3xl lg:max-w-[740px]  flex flex-col items-center">
-        <h3 className="py-6 font-bold text-xl sm:text-2xl m-4">
+        <h3 className="mb-6 mt-20 font-bold text-xl sm:text-2xl mx-10 sm:mx-20">
           {selectedService}
         </h3>
-        <p className="text-gray-500 text-lg sm:text-xl mt-4 mb-24 mx-4 sm:mx-20">
+        <p className="text-gray-500 text-lg sm:text-xl mt-4 mb-24 mx-10 sm:mx-20">
           {selectedServiceInfo}
         </p>
       </div>
@@ -25,5 +27,4 @@ ServicesInfo.propTypes = {
   selectedServiceInfo: PropTypes.string.isRequired,
   onClose: PropTypes.func.isRequired,
 };
-
 export default ServicesInfo;
