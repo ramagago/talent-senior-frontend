@@ -12,18 +12,33 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <div className="w-screen bg-white flex flex-col items-center  ">
-      <Navbar />
-      <MainBanner />
-      <Services />
-      <Team />
-      <Purpose />
-      <Ambassadors className="w-screen xl:w-[1280px]" />
-      <Testimonials />
-      <Contact />
+      <Navbar sections={sections} />
+      <div className=" mt-24 lg:mt-48 flex flex-col items-center">
+        <MainBanner id={sections.mainBanner} />
+        <Services id={sections.services} />
+        <Team id={sections.team} />
+        <Purpose id={sections.purpose} />
+        <Ambassadors
+          className="w-screen xl:w-[1280px]"
+          id={sections.ambassadors}
+        />
+        <Testimonials id={sections.testimonials} />
+        <Contact id={sections.contact} />
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
 
-export default App
+export default App;
+
+const sections = {
+  mainBanner: "mainBanner",
+  services: "services",
+  team: "team",
+  purpose: "purpose",
+  ambassadors: "ambassadors",
+  testimonials: "testimonials",
+  contact: "contact",
+};

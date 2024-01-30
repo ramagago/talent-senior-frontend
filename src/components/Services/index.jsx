@@ -1,9 +1,13 @@
 import ServiceCard from "./ServiceCard";
 import data from "./data";
+import PropTypes from "prop-types";
 
-const Services = () => {
+const Services = ({ id }) => {
   return (
-    <div className="w-screen bg-celeste01 flex flex-col items-center">
+    <div
+      id={id}
+      className="scroll-mt-24 lg:scroll-mt-48  w-screen bg-celeste01 flex flex-col items-center"
+    >
       <h1 className="text-white text-4xl sm:text-6xl font-bold mt-24 mb-16">
         Servicios
       </h1>
@@ -20,5 +24,7 @@ const Services = () => {
     </div>
   );
 };
-
+Services.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 export default Services;
