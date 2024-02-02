@@ -18,10 +18,7 @@ function App() {
         <Services id={sections.services} />
         <Team id={sections.team} />
         <Purpose id={sections.purpose} />
-        <Ambassadors
-          className="w-screen xl:w-[1280px]"
-          id={sections.ambassadors}
-        />
+        <Ambassadors id={sections.ambassadors} />
         <Testimonials id={sections.testimonials} />
         <Contact id={sections.contact} />
 

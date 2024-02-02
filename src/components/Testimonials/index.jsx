@@ -1,8 +1,9 @@
 import { TestimonialsData } from "./data";
 import TestimonialsCard from "./TestimonialsCard";
 import { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
-const Testimonials = () => {
+const Testimonials = ({ id }) => {
   const [n, setN] = useState(0);
   const testimonialsRef = useRef(null);
 
@@ -34,7 +35,10 @@ const Testimonials = () => {
   // }, [n]);
 
   return (
-    <div className="w-screen xl:w-[1280px] flex flex-col">
+    <div
+      className="scroll-mt-24 lg:scroll-mt-48 w-screen xl:w-[1280px] flex flex-col"
+      id={id}
+    >
       <h2 className="text-azul01 text-3xl sm:text-5xl lg:text-6xl font-bold mt-16 mb-2 ml-4">
         Testimonios
       </h2>
@@ -67,6 +71,10 @@ const Testimonials = () => {
       </div>
     </div>
   );
+};
+
+Testimonials.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default Testimonials;

@@ -1,6 +1,11 @@
-const Contact = () => {
+import PropTypes from "prop-types";
+
+const Contact = ({ id }) => {
   return (
-    <div className="w-screen flex items-center flex-col">
+    <div
+      className="scroll-mt-24 lg:scroll-mt-48 w-screen flex items-center flex-col"
+      id={id}
+    >
       <div className="w-full xl:w-[1280px] flex flex-col items-end">
         <h2 className="text-azul01 text-3xl sm:text-5xl lg:text-6xl font-bold mt-10 mb-2 mr-4">
           Contacto
@@ -40,6 +45,10 @@ const Contact = () => {
       </div>
     </div>
   );
+};
+
+Contact.propTypes = {
+  id: PropTypes.string.isRequired,
 };
 
 export default Contact;

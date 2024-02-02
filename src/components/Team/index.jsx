@@ -2,11 +2,15 @@ import { cofoundersData, collaboratorsData } from "./data";
 import CofounderCard from "./CofounderCard";
 import CollaboratorCard from "../CollaboratorCard";
 import imgBanner from "../../img/ts-banner-team.png";
+import PropTypes from "prop-types";
 
-const Team = () => {
+const Team = ({ id }) => {
   return (
-    <>
-      <div className="w-screen xl:w-[1280px] flex flex-col">
+    <div
+      id={id}
+      className="scroll-mt-24 lg:scroll-mt-48 flex flex-col justify-center items-center"
+    >
+      <div className=" w-screen xl:w-[1280px] flex flex-col">
         <h2 className="text-azul01 text-3xl sm:text-5xl lg:text-6xl font-bold mt-16 mb-2 ml-4">
           Quienes somos
         </h2>
@@ -48,8 +52,13 @@ const Team = () => {
           className="  w-screen object-cover "
         />
       </div>
-    </>
+    </div>
   );
 };
 
+Team.propTypes = {
+  id: PropTypes.string.isRequired,
+};
 export default Team;
+
+
