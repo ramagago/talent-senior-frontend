@@ -2,6 +2,7 @@ import { TestimonialsData } from "./data";
 import TestimonialsCard from "./TestimonialsCard";
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import Carousel from "nuka-carousel";
 
 const Testimonials = ({ id }) => {
   const [n, setN] = useState(0);
@@ -45,18 +46,21 @@ const Testimonials = ({ id }) => {
       <hr className="w-16 sm:w-36 bg-azul01 h-1 sm:h-2 mb-10 ml-4" />
 
       <div className="flex justify-between items-center md:min-h-[300px]">
-        <button onClick={clickLeft} className="size-8 mx-4 text-gray-400">
+        <Carousel>
+          {TestimonialsData.map((testimonial) => (
+            <TestimonialsCard
+              key={testimonial.name}
+              name={testimonial.name}
+              title={testimonial.title}
+              testimony={testimonial.testimony}
+            />
+          ))}
+        </Carousel>
+
+        {/* <button onClick={clickLeft} className="size-8 mx-4 text-gray-400">
           &#10094;
         </button>
         <div ref={testimonialsRef} className="flex w-full">
-          {/* {TestimonialsData.map(({ name, title, testimony }) => (
-            <TestimonialsCard
-              key={name}
-              name={name}
-              title={title}
-              testimony={testimony}
-            />
-          ))} */}
 
           <TestimonialsCard
             key={TestimonialsData[n].name}
@@ -67,7 +71,7 @@ const Testimonials = ({ id }) => {
         </div>
         <button onClick={clickRight} className="size-8 mx-4 text-gray-400">
           &#10095;
-        </button>
+        </button> */}
       </div>
     </div>
   );
