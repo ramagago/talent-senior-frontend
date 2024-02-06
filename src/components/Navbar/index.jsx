@@ -18,7 +18,6 @@ const Navbar = ({ sections }) => {
   useEffect(() => {
     const onScroll = () => {
       const scrollPosition = window.scrollY + divRef.current.offsetHeight + 2;
-      console.log(divRef.current);
 
       let current = "";
       Object.values(sections).forEach((sectionValue) => {

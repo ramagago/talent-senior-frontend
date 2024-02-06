@@ -8,23 +8,37 @@ import Ambassadors from "./components/Ambassadors";
 import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import ServicesInfo from "./components/Services/ServicesInfo";
+
+import { useModalContextManager, ModalContext } from "./context/modalContext";
 
 function App() {
-  return (
-    <div className="w-screen bg-white flex flex-col items-center  ">
-      <Navbar sections={sections} />
-      <div className=" mt-24 lg:mt-48 flex flex-col items-center">
-        <MainBanner id={sections.mainBanner} />
-        <Services id={sections.services} />
-        <Team id={sections.team} />
-        <Purpose id={sections.purpose} />
-        <Ambassadors id={sections.ambassadors} />
-        <Testimonials id={sections.testimonials} />
-        <Contact id={sections.contact} />
+  const modalManager = useModalContextManager();
 
-        <Footer />
+  return (
+    <ModalContext.Provider value={modalManager}>
+      <div className="w-screen bg-white flex flex-col items-center relative ">
+        <Navbar sections={sections} />
+        <div className=" mt-24 lg:mt-48 flex flex-col items-center">
+          <MainBanner id={sections.mainBanner} />
+          <Services id={sections.services} />
+          <Team id={sections.team} />
+          <Purpose id={sections.purpose} />
+          <Ambassadors id={sections.ambassadors} />
+          <Testimonials id={sections.testimonials} />
+          <Contact id={sections.contact} />
+
+          <Footer />
+        </div>{" "}
+        {modalManager.isVisible && (
+          <ServicesInfo
+            selectedService={modalManager.title}
+            selectedServiceInfo={modalManager.info}
+            onClose={() => modalManager.setIsVisible(false)}
+          />
+        )}
       </div>
-    </div>
+    </ModalContext.Provider>
   );
 }
 

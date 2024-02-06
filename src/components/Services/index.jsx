@@ -1,19 +1,10 @@
 import ServiceCard from "./ServiceCard";
-import ServicesInfo from "./ServicesInfo";
 import data from "./data";
-import { useState } from "react";
 import PropTypes from "prop-types";
+import { useModalContextConsumer } from "../../context/modalContext";
 
 const Services = ({ id }) => {
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [selectedService, setSelectedService] = useState(null);
-  const [selectedServiceInfo, setSelectedServiceInfo] = useState(null);
-
-  const handleCardClick = (label, information) => {
-    setModalOpen(true);
-    setSelectedService(label);
-    setSelectedServiceInfo(information);
-  };
+  const { showModal } = useModalContextConsumer();
 
   return (
     <>
@@ -31,18 +22,11 @@ const Services = ({ id }) => {
               imgSource={img}
               title={label}
               description={description}
-              onCardClick={() => handleCardClick(label, information)}
+              onCardClick={() => showModal(label, information)}
             />
           ))}
         </div>
       </div>
-      {isModalOpen && (
-        <ServicesInfo
-          selectedService={selectedService}
-          selectedServiceInfo={selectedServiceInfo}
-          onClose={() => setModalOpen(false)}
-        />
-      )}
     </>
   );
 };
