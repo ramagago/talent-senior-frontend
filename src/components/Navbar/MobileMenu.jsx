@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import AllianceMenu from "./AllianceMenu";
 import { useState } from "react";
+import { IoIosArrowDown } from "react-icons/io";
 
 const MobileMenu = ({ sections, currentSection }) => {
   const [isAllianceOpen, setAllianceOpen] = useState(false);
@@ -8,7 +9,7 @@ const MobileMenu = ({ sections, currentSection }) => {
     setAllianceOpen(!isAllianceOpen);
   };
   return (
-    <ul className="fixed top-24 right-0 flex flex-col justify-center bg-white items-center xl:hidden">
+    <ul className="fixed top-24 right-0 flex flex-col justify-center bg-white items-center xl:hidden w-48">
       <a href="#services">
         <li
           className={`px-7 py-4 text-1xl ${
@@ -64,10 +65,10 @@ const MobileMenu = ({ sections, currentSection }) => {
         </li>
       </a>
       <li
-        className="px-7 py-4 text-1xl cursor-pointer  hover:text-gray-500 active:text-gray-00"
+        className="flex items-center px-7 py-4 text-1xl cursor-pointer  hover:text-gray-500 active:text-gray-00"
         onClick={toggleAlliance}
       >
-        ALIANZAS
+        ALIANZAS <IoIosArrowDown className="mx-1" />
       </li>
       {isAllianceOpen && (
         <AllianceMenu className="absolute right-0 bottom-0 translate-y-full" />
