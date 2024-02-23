@@ -1,10 +1,11 @@
+import { useContext } from "react";
 import ServiceCard from "./ServiceCard";
 import data from "./data";
 import PropTypes from "prop-types";
-import { useModalContextConsumer } from "../../context/modalContext";
+import { ModalContext } from "../../context/modalContext";
 
 const Services = ({ id }) => {
-  const { showModal } = useModalContextConsumer();
+  const { showModal } = useContext(ModalContext);
 
   return (
     <>

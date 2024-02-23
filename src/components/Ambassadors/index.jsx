@@ -17,24 +17,10 @@ const Ambassadors = ({ id }) => {
         {strings.title} {/* INFO: para usar strings como variables */}
       </h2>
       <hr className="w-16 sm:w-36 bg-azul01 h-1 sm:h-2 mb-10 ml-4" />
-      <div className="flex w-full justify-between">
-        <button
-          onClick={() => {
-            console.log("LEFT");
-            list.current.scrollTo({
-              left:
-                list.current.scrollRight +
-                list.current.scrollWidth / AmbassadorsData.length,
-              behavior: "smooth",
-            });
-          }}
-        >
-          <TfiArrowCircleLeft className="size-8 text-gray-400 mx-2" />
-        </button>
-
+      <div className="w-full flex flex-col justify-center items-center z-10 relative">
         <div
           ref={list}
-          className="overflow-x-auto whitespace-nowrap snap-x pb-4 w-5/6"
+          className="overflow-x-auto whitespace-nowrap snap-x pb-4 w-5/6 xl:w-[1080px]"
         >
           {AmbassadorsData.map(({ img, name, title, linkedin }) => (
             <CollaboratorCard
@@ -47,19 +33,35 @@ const Ambassadors = ({ id }) => {
             />
           ))}
         </div>
-
-        <button
-          onClick={() =>
-            list.current.scrollTo({
-              left:
-                list.current.scrollLeft +
-                list.current.scrollWidth / AmbassadorsData.length,
-              behavior: "smooth",
-            })
-          }
-        >
-          <TfiArrowCircleRight className="size-8 text-gray-400 mx-2" />
-        </button>
+        <div className="w-full">
+          <div className="xl:w-[1280px] w-full flex justify-end overflow-visible xl:absolute xl:justify-between xl:bottom-48 px-4 xl:mx-0">
+            <button
+              onClick={() => {
+                console.log("LEFT");
+                list.current.scrollTo({
+                  left:
+                    list.current.scrollRight +
+                    list.current.scrollWidth / AmbassadorsData.length,
+                  behavior: "smooth",
+                });
+              }}
+            >
+              <TfiArrowCircleLeft className="size-8 text-gray-400 mx-2" />
+            </button>
+            <button
+              onClick={() =>
+                list.current.scrollTo({
+                  left:
+                    list.current.scrollLeft +
+                    list.current.scrollWidth / AmbassadorsData.length,
+                  behavior: "smooth",
+                })
+              }
+            >
+              <TfiArrowCircleRight className="size-8 text-gray-400 mx-2" />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );

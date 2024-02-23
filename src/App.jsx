@@ -9,8 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ServicesInfo from "./components/Services/ServicesInfo";
-
-import { useModalContextManager, ModalContext } from "./context/modalContext";
+import { ModalContext, useModalContextManager } from "./context/modalContext";
 
 function App() {
   const modalManager = useModalContextManager();
@@ -29,7 +28,7 @@ function App() {
           <Contact id={sections.contact} />
 
           <Footer />
-        </div>{" "}
+        </div>
         {modalManager.isVisible && (
           <ServicesInfo
             selectedService={modalManager.title}
