@@ -1,5 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  corePlugins: {
+    preflight: false,
+  },
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
@@ -9,7 +12,7 @@ export default {
         rosado01: "#d6408e",
       },
       screens: {
-        mobile: "380px",
+        xsm: "370px",
       },
     },
   },

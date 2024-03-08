@@ -8,7 +8,7 @@ const MainBanner = ({ id }) => {
       id={id}
     >
       <div className="max-w-3xl">
-        <h1 className="text-2xl mobile:text-3xl sm:text-5xl lg:text-6xl mx-4 font-bold text-azul01 mb-6">
+        <h1 className="text-2xl xsm:text-3xl sm:text-5xl lg:text-6xl mx-4 font-bold text-azul01 mb-6">
           Promovemos el valor de las relaciones intergeneracionales
         </h1>
         <h3 className="text-xl mx-4 text-azul01">

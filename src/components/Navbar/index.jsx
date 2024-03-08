@@ -51,7 +51,10 @@ const Navbar = ({ sections }) => {
           />
         </a>
         <div>
-          <button onClick={toggleMenu} className="mr-4 xl:hidden">
+          <button
+            onClick={toggleMenu}
+            className="mr-4 xl:hidden bg-transparent"
+          >
             <CiMenuBurger className="size-12" />
           </button>
           {isMenuOpen && (

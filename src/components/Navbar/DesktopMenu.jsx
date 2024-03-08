@@ -11,7 +11,7 @@ const DesktopMenu = ({ sections, currentSection }) => {
   };
   return (
     <>
-      <ul className="xl:flex justify-center items-center hidden relative">
+      <ul className="xl:flex justify-center items-center hidden relative list-none">
         <a href="#services">
           <li
             className={`px-6 py-4 text-1xl ${
@@ -82,7 +82,7 @@ const DesktopMenu = ({ sections, currentSection }) => {
 
 DesktopMenu.propTypes = {
   sections: PropTypes.object.isRequired,
-  currentSection: PropTypes.object.isRequired,
+  currentSection: PropTypes.string.isRequired,
 };
 
 export default DesktopMenu;

@@ -16,7 +16,7 @@ const Purpose = ({ id }) => {
         <img
           src={data.img}
           alt=""
-          className="rounded-3xl w-64 mobile:w-96 object-cover m-4"
+          className="rounded-3xl w-64 xsm:w-96 object-cover m-4"
         />
         <p className="m-4 text-gray-500 text-xl">{data.description}</p>
       </div>

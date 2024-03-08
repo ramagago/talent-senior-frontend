@@ -34,10 +34,9 @@ const Ambassadors = ({ id }) => {
           ))}
         </div>
         <div className="w-full">
-          <div className="xl:w-[1280px] w-full flex justify-end overflow-visible xl:absolute xl:justify-between xl:bottom-48 px-4 xl:mx-0">
+          <div className="xl:w-[1280px] w-full flex justify-end overflow-visible xl:absolute xl:justify-between xl:bottom-48 px-4 xl:mx-0 ">
             <button
               onClick={() => {
-                console.log("LEFT");
                 list.current.scrollTo({
                   left:
                     list.current.scrollRight +
@@ -45,8 +44,9 @@ const Ambassadors = ({ id }) => {
                   behavior: "smooth",
                 });
               }}
+              className="bg-transparent"
             >
-              <TfiArrowCircleLeft className="size-8 text-gray-400 mx-2" />
+              <TfiArrowCircleLeft className="size-8 text-gray-400 mx-2 " />
             </button>
             <button
               onClick={() =>
@@ -57,6 +57,7 @@ const Ambassadors = ({ id }) => {
                   behavior: "smooth",
                 })
               }
+              className="bg-transparent"
             >
               <TfiArrowCircleRight className="size-8 text-gray-400 mx-2" />
             </button>

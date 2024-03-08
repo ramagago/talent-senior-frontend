@@ -9,10 +9,10 @@ const MobileMenu = ({ sections, currentSection }) => {
     setAllianceOpen(!isAllianceOpen);
   };
   return (
-    <ul className="fixed top-24 right-0 flex flex-col justify-center bg-white items-center xl:hidden w-48">
+    <ul className="fixed top-24 right-0 flex flex-col justify-center text-sm bg-white items-center xl:hidden w-48 ">
       <a href="#services">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.services ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -21,7 +21,7 @@ const MobileMenu = ({ sections, currentSection }) => {
       </a>
       <a href="#team">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.team ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -30,7 +30,7 @@ const MobileMenu = ({ sections, currentSection }) => {
       </a>
       <a href="#purpose">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.purpose ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -39,7 +39,7 @@ const MobileMenu = ({ sections, currentSection }) => {
       </a>
       <a href="#testimonials">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.testimonials ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -48,7 +48,7 @@ const MobileMenu = ({ sections, currentSection }) => {
       </a>
       <a href="#contact">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.contact ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -57,7 +57,7 @@ const MobileMenu = ({ sections, currentSection }) => {
       </a>
       <a href="#ambassadors">
         <li
-          className={`px-7 py-4 text-1xl ${
+          className={`px-7 py-4 ${
             currentSection === sections.ambassadors ? "font-bold" : ""
           } hover:text-gray-500 active:text-gray-00`}
         >
@@ -65,7 +65,7 @@ const MobileMenu = ({ sections, currentSection }) => {
         </li>
       </a>
       <li
-        className="flex items-center px-7 py-4 text-1xl cursor-pointer  hover:text-gray-500 active:text-gray-00"
+        className="flex items-center px-7 py-4 cursor-pointer  hover:text-gray-500 active:text-gray-00"
         onClick={toggleAlliance}
       >
         ALIANZAS <IoIosArrowDown className="mx-1" />
@@ -79,7 +79,7 @@ const MobileMenu = ({ sections, currentSection }) => {
 
 MobileMenu.propTypes = {
   sections: PropTypes.object.isRequired,
-  currentSection: PropTypes.object.isRequired,
+  currentSection: PropTypes.string.isRequired,
 };
 
 export default MobileMenu;

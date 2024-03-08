@@ -70,10 +70,16 @@ const Testimonials = ({ id }) => {
         </Carousel>
         <div className="w-full flex justify-center z-10 relative">
           <div className="xl:w-[1280px] w-full flex justify-end overflow-visible xl:absolute xl:justify-between xl:bottom-24 mx-4 xl:mx-0">
-            <button onClick={() => carRef.current.prev()} className="">
+            <button
+              onClick={() => carRef.current.prev()}
+              className="bg-transparent"
+            >
               <TfiArrowCircleLeft className="size-8 text-gray-400 mx-2" />
             </button>
-            <button onClick={() => carRef.current.next()}>
+            <button
+              onClick={() => carRef.current.next()}
+              className="bg-transparent"
+            >
               <TfiArrowCircleRight className="size-8 text-gray-400 mx-2" />
             </button>
           </div>
