@@ -3,25 +3,26 @@ import FormPersonalData from "./FormPersonalData";
 import FormAbout from "./FormAbout";
 import FormStudies from "./FormStudies";
 import FormWorkExperience from "./FormWorkExperience";
-import { Form, Button } from "antd";
+import { Form, Button, message } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import FormLanguages from "./FormLanguages";
 import FormReferences from "./FormReferences";
+import PropTypes from "prop-types";
+import { formSerializer } from "../../utils/formSerializer";
 
-const TalentForm = () => {
-  const [currentStep, setCurrentStep] = useState(6);
+const TalentForm = ({ setIsTalentModalOpen }) => {
+  const [currentStep, setCurrentStep] = useState(5);
   // const [formData, setFormData] = useState(null);
+
   const onFinish = () => {
     // setFormData((prevFormData) => ({ ...prevFormData, ...values }));
-    console.log("submnit", form.getFieldsValue(true));
+    const values = form.getFieldsValue(true);
+    console.log(formSerializer(values));
+    setIsTalentModalOpen(false);
+    message.success("Se ha registrado con éxito");
   };
 
   const [form] = Form.useForm();
-
-  form.setFieldValue("jobExperience", [
-    { company: "roostrap" },
-    { company: "howdy" },
-  ]);
 
   const onNext = async () => {
     try {
@@ -42,6 +43,7 @@ const TalentForm = () => {
         name="registerTalent"
         scrollToFirstError
         onFinish={onFinish}
+        preserve
       >
         {currentStep === 1 && <FormPersonalData />}
         {currentStep === 2 && <FormAbout />}
@@ -69,5 +71,8 @@ const TalentForm = () => {
       </Form>
     </>
   );
+};
+TalentForm.propTypes = {
+  setIsTalentModalOpen: PropTypes.func.isRequired, // Define prop types
 };
 export default TalentForm;

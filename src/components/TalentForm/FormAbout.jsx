@@ -11,9 +11,7 @@ const FormAbout = () => {
       <label htmlFor="about"></label>
       <FormItem
         name="about"
-        rules={[
-          { required: true, message: "Por favor debe completar este campo" },
-        ]}
+        rules={[{ required: true, message: "Este campo es requerido" }]}
       >
         <TextArea id="about" rows={8} />
       </FormItem>

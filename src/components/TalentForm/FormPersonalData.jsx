@@ -19,7 +19,7 @@ const FormPersonalData = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -35,7 +35,7 @@ const FormPersonalData = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -109,7 +109,7 @@ const FormPersonalData = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -131,7 +131,7 @@ const FormPersonalData = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >

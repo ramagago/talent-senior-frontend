@@ -33,7 +33,7 @@ const FormStudies = () => {
               rules={[
                 {
                   required: true,
-                  message: "Por favor debe completar este campo",
+                  message: "Este campo es requerido",
                 },
               ]}
             />
@@ -54,7 +54,7 @@ const FormStudies = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -70,7 +70,7 @@ const FormStudies = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -88,7 +88,7 @@ const FormStudies = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -104,7 +104,7 @@ const FormStudies = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
@@ -134,7 +134,7 @@ const FormStudies = () => {
             rules={[
               {
                 required: true,
-                message: "Por favor debe completar este campo",
+                message: "Este campo es requerido",
               },
             ]}
           >
