@@ -2,7 +2,7 @@ import { useContext } from "react";
 import ServiceCard from "./ServiceCard";
 import data from "./data";
 import PropTypes from "prop-types";
-import { ModalContext } from "../../context/modalContext";
+import { ModalContext } from "../../context/ModalContext";
 
 const Services = ({ id }) => {
   const { showModal } = useContext(ModalContext);

@@ -9,7 +9,7 @@ import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import ServicesInfo from "./components/Services/ServicesInfo";
-import { ModalContext, useModalContextManager } from "./context/modalContext";
+import { ModalContext, useModalContextManager } from "./context/ModalContext";
 
 function App() {
   const modalManager = useModalContextManager();

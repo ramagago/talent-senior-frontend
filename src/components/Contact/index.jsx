@@ -4,7 +4,6 @@ import { createPortal } from "react-dom";
 import { Modal } from "antd";
 import TalentForm from "../TalentForm";
 import CompanyForm from "../CompanyForm";
-import Calendly from "../Calendly";
 import { PopupButton } from "react-calendly";
 
 const Contact = ({ id }) => {
