@@ -2,12 +2,11 @@ import PropTypes from "prop-types";
 import { RxCross1 } from "react-icons/rx";
 
 const ServicesInfo = ({ selectedService, selectedServiceInfo, onClose }) => {
-  console.log("RENDERING MODAL");
   return (
     <div className="w-screen h-screen bg-black/60 z-50 fixed flex flex-col justify-center items-center px-10">
       <div className="relative bg-white rounded-3xl w-full max-w-4xl flex flex-col ">
         <button
-          className="absolute top-10 right-10 text-3xl hover:text-gray-300"
+          className="absolute top-10 right-10 text-3xl hover:text-gray-300 bg-transparent"
           onClick={onClose}
         >
           <RxCross1 />

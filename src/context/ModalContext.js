@@ -1,4 +1,4 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState } from "react";
 
 export const ModalContext = createContext(null);
 
@@ -15,5 +15,3 @@ export const useModalContextManager = () => {
 
   return { isVisible, title, info, setIsVisible, setTitle, setInfo, showModal };
 };
-
-export const useModalContextConsumer = () => useContext(ModalContext);
