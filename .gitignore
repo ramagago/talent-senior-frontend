@@ -1,2 +1,5 @@
-node_modelues/
-.env
+# compiled output
+/dist
+/node_modules
+
+*.env
