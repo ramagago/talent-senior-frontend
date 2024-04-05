@@ -7,7 +7,6 @@ import { createCompany } from "../../utils/fetchdata";
 const CompanyForm = ({ setIsCompanyModalOpen }) => {
   const [form] = Form.useForm();
   const onFinish = async (values) => {
-    console.log(form.getFieldsValue());
     try {
       await createCompany(values);
 

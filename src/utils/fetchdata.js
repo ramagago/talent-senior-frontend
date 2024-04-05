@@ -17,7 +17,6 @@ export const createCompany = async (companyData) => {
     }
 
     const data = await response.json();
-    console.log("holaaa", data);
     return data;
   } catch (error) {
     console.error("Error:", error);
