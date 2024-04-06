@@ -9,18 +9,24 @@ import FormLanguages from "./FormLanguages";
 import FormReferences from "./FormReferences";
 import PropTypes from "prop-types";
 import { formSerializer } from "../../utils/formSerializer";
+import { createPerson } from "../../utils/fetchdata";
 
 const TalentForm = ({ setIsTalentModalOpen }) => {
   const [currentStep, setCurrentStep] = useState(1);
   // const [formData, setFormData] = useState(null);
 
-  const onFinish = () => {
-    // setFormData((prevFormData) => ({ ...prevFormData, ...values }));
+  const onFinish = async () => {
+
     const values = form.getFieldsValue(true);
-    console.log("Form submit ", values);
-    console.log(formSerializer(values));
-    setIsTalentModalOpen(false);
-    message.success("Se ha registrado con éxito");
+    console.log("Form submit ", formSerializer(values));
+
+    try {
+      await createPerson(formSerializer(values));
+      setIsTalentModalOpen(false);
+      message.success("Se ha registrado con éxito");
+    } catch (error) {
+      message.error("Ocurrió un error al intentar crear la empresa");
+    }
   };
 
   const [form] = Form.useForm();
@@ -43,7 +49,7 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
         form={form}
         name="registerTalent"
         scrollToFirstError
-        onFinish={onFinish}
+        onFinish={()=>onFinish()}
         preserve
       >
         {currentStep === 1 && <FormPersonalData />}

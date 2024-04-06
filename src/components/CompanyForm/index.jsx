@@ -59,7 +59,12 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
           </div>
           <div className="lg:col-span-2">
             <label htmlFor="companyEmail">Email de negocio</label>
-            <FormItem name="companyEmail">
+            <FormItem name="companyEmail"               rules={[
+                {
+                  type: "email",
+                  message: "Este campo debe ser un email válido",
+                },
+              ]}>
               <Input id="companyEmail" />
             </FormItem>
           </div>
