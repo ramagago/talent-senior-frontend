@@ -30,6 +30,7 @@ AmbassadorCard.propTypes = {
   name: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   linkedin: PropTypes.string.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default AmbassadorCard;

@@ -10,16 +10,12 @@ const FormReferences = () => {
   const form = useFormInstance();
   const { Panel } = Collapse;
   const references = useWatch("references", form) || [];
-<<<<<<< HEAD
   const [showForm, setShowForm] = useState(
     !!form.getFieldValue("referenceType") ||
       !!form.getFieldValue("referenceName") ||
       !!form.getFieldValue("referenceSurname") ||
       !form.getFieldValue("references")?.length
   );
-=======
-  const [showForm, setShowForm] = useState(true);
->>>>>>> main
 
   const addNewReference = async () => {
     try {
@@ -196,11 +192,7 @@ const FormReferences = () => {
             className="transition-all border border-white bg-celeste01 text-white rounded-md px-5 py-2 hover:border-celeste01 hover:bg-white hover:text-celeste01"
             onClick={addNewReference}
           >
-<<<<<<< HEAD
             Agregar Referencia
-=======
-            Agregar Trabajo
->>>>>>> main
           </button>
         </>
       )}{" "}

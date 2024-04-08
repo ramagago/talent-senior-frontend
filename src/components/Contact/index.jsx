@@ -9,10 +9,6 @@ import { PopupButton } from "react-calendly";
 const Contact = ({ id }) => {
   const [isTalentModalOpen, setIsTalentModalOpen] = useState(false);
   const [isCompanyModalOpen, setIsCompanyModalOpen] = useState(false);
-<<<<<<< HEAD
-=======
-  // const [isCalendlyModalOpen, setIsCalendlyModalOpen] = useState(false);
->>>>>>> main
 
   const showTalentModal = () => {
     setIsTalentModalOpen(true);
@@ -27,15 +23,6 @@ const Contact = ({ id }) => {
   const handleCompanyCancel = () => {
     setIsCompanyModalOpen(false);
   };
-<<<<<<< HEAD
-=======
-  // const showCalendlyModal = () => {
-  //   setIsCalendlyModalOpen(true);
-  // };
-  // const handleCalendlyCancel = () => {
-  //   setIsCalendlyModalOpen(false);
-  // };
->>>>>>> main
 
   return (
     <>
@@ -64,13 +51,6 @@ const Contact = ({ id }) => {
               >
                 Registrarme
               </button>
-<<<<<<< HEAD
-
-=======
-              {/* <button
-                className="text-azul01 text-md font-bold m-2 py-3 px-10 bg-white rounded-full hover:bg-celeste01 hover:text-white transition-all ease-in-out duration-200"
-              > */}
->>>>>>> main
               <PopupButton
                 className="text-azul01 text-md font-bold m-2 py-3 px-10 bg-white rounded-full hover:bg-celeste01 hover:text-white transition-all ease-in-out duration-200"
                 url="https://calendly.com/monicaestefan"
@@ -81,11 +61,6 @@ const Contact = ({ id }) => {
                 rootElement={document.getElementById("root")}
                 text="Agendar Entrevista"
               />
-<<<<<<< HEAD
-=======
-              {/* Agendar Entrevista */}
-              {/* </button> */}
->>>>>>> main
             </div>
           </div>
           <div className="w-full md:w-1/2 bg-celeste01 h-[500px] flex flex-col justify-center items-center text-center">
@@ -138,25 +113,6 @@ const Contact = ({ id }) => {
         </div>,
         document.getElementById("modal")
       )}
-<<<<<<< HEAD
-=======
-      {/* {createPortal(
-        <div style={{ position: "absolute" }}>
-          <Modal
-            open={isCalendlyModalOpen}
-            onCancel={handleCalendlyCancel}
-            footer={null}
-            width="1080px"
-          >
-            <Calendly
-              className="p-8"
-              setIsCompanyModalOpen={setIsCalendlyModalOpen}
-            />
-          </Modal>
-        </div>,
-        document.getElementById("modal")
-      )} */}
->>>>>>> main
     </>
   );
 };
