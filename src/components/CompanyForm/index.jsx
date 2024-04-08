@@ -8,6 +8,7 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
   const [form] = Form.useForm();
   const onFinish = async (values) => {
     try {
+      await form.validateFields();
       await createCompany(values);
 
       setIsCompanyModalOpen(false);

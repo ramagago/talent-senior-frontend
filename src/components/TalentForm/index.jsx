@@ -16,18 +16,20 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
   // const [formData, setFormData] = useState(null);
 
   const onFinish = async () => {
-
-    const values = form.getFieldsValue(true);
-    console.log("Form submit ", formSerializer(values));
-
-    try {
-      await createPerson(formSerializer(values));
-      setIsTalentModalOpen(false);
-      message.success("Se ha registrado con éxito");
-    } catch (error) {
-      message.error("Ocurrió un error al intentar crear la empresa");
-    }
-  };
+    
+      form.validateFields().then(()=>{
+        const values = form.getFieldsValue(true);
+        console.log("form values", values)
+        const personData = formSerializer(values)
+        console.log("Form submit ", personData);
+        createPerson(personData).then(()=>{ 
+          setIsTalentModalOpen(false);
+          message.success("Se ha registrado con éxito");})
+          .catch((error)=>{
+            message.error("Ocurrió un error al intentar crear la empresa")});
+    }).catch((error)=>{
+      message.error("Debe completar todos los campos obligatorios")
+    }) };
 
   const [form] = Form.useForm();
 
@@ -35,6 +37,8 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
     try {
       await form.validateFields();
       setCurrentStep(currentStep + 1);
+      const values = form.getFieldsValue(true);
+      console.log("form values", values)
     } catch (err) {
       return;
     }
@@ -49,8 +53,7 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
         form={form}
         name="registerTalent"
         scrollToFirstError
-        onFinish={()=>onFinish()}
-        preserve
+        //onFinish={onFinish}
       >
         {currentStep === 1 && <FormPersonalData />}
         {currentStep === 2 && <FormAbout />}
@@ -65,12 +68,12 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
             </Button>
           )}
           {currentStep < 6 && (
-            <Button type="primary" onClick={onNext} className=" ml-1">
+            <Button type="primary" onClick={onNext} className="ml-1">
               Next
             </Button>
           )}
           {currentStep === 6 && (
-            <Button type="primary" htmlType="submit" className="ml-1">
+            <Button type="primary" className="ml-1" onClick={onFinish}>
               Submit
             </Button>
           )}

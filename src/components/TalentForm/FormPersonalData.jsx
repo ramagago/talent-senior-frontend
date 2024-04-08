@@ -44,7 +44,13 @@ const FormPersonalData = () => {
         </div>
         <div>
           <label htmlFor="dni">Documento de Identidad</label>
-          <FormItem name="dni" initialValue="cedulaDeIdentidad">
+          <FormItem name="dni" initialValue="cedulaDeIdentidad"
+                      rules={[
+                        {
+                          required: true,
+                          message: "Este campo es requerido",
+                        },
+                      ]}>
             <Select
               options={[
                 {
@@ -64,9 +70,14 @@ const FormPersonalData = () => {
           </FormItem>
         </div>
         <div>
-          <label htmlFor="surname">CI sin puntos ni guiones</label>
-          <FormItem name="dniNumber">
-            <Input name="surname" id="surname" />
+          <label htmlFor="dniNumber">CI sin puntos ni guiones</label>
+          <FormItem name="dniNumber" rules={[
+                        {
+                          required: true,
+                          message: "Este campo es requerido",
+                        },
+                      ]}>
+            <Input name="dniNumber" id="dniNumber" />
           </FormItem>
         </div>
         <div>
@@ -79,8 +90,8 @@ const FormPersonalData = () => {
           </FormItem>
         </div>
         <div>
-          <label htmlFor="genero">Género</label>
-          <FormItem name="genero">
+          <label htmlFor="gender">Género</label>
+          <FormItem name="gender">
             <Select
               options={[
                 {
@@ -96,16 +107,16 @@ const FormPersonalData = () => {
                   label: "Prefiero no responder",
                 },
               ]}
-              id="genero"
+              id="gender"
             />
           </FormItem>
         </div>
         <div className="xl:col-span-2">
-          <label htmlFor="adress">
+          <label htmlFor="address">
             Dirección<span className="text-red-400 text-xs"> *</span>
           </label>
           <FormItem
-            name="adress"
+            name="address"
             rules={[
               {
                 required: true,
@@ -113,7 +124,7 @@ const FormPersonalData = () => {
               },
             ]}
           >
-            <Input id="adress" />
+            <Input id="address" />
           </FormItem>
         </div>
         <div>
@@ -152,7 +163,7 @@ const FormPersonalData = () => {
             <Input id="email" />
           </FormItem>
         </div>
-        <CityPicker className="xl:col-span-2" />
+        <CityPicker className="xl:col-span-2" county="countyPD" city="cityPD"/>
       </div>
     </>
   );

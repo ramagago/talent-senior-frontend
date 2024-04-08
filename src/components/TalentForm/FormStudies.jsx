@@ -34,8 +34,8 @@ const FormStudies = () => {
         startStudyDate,
         currentlyStudying,
         endStudyDate,
-        county,
-        city,
+        countyStudy,
+        cityStudy,
         studies = [],
         ...rest
       } = form.getFieldsValue(true);
@@ -50,8 +50,8 @@ const FormStudies = () => {
             startStudyDate,
             currentlyStudying,
             endStudyDate,
-            county,
-            city,
+            countyStudy,
+            cityStudy,
           },
         ],
         level: undefined,
@@ -61,8 +61,8 @@ const FormStudies = () => {
         startStudyDate: undefined,
         currentlyStudying: undefined,
         endStudyDate: undefined,
-        county: "MONTEVIDEO",
-        city: undefined,
+        countyStudy: undefined,
+        cityStudy: undefined,
         ...rest,
       });
       setShowForm(false);
@@ -244,7 +244,7 @@ const FormStudies = () => {
                 <DatePicker disabled={currentlyStudying} id="endStudyDate" />
               </FormItem>
             </div>
-            <CityPicker />
+            <CityPicker city="cityStudy" county="countyStudy"/>
           </div>
           <button
             className="transition-all border border-white bg-celeste01 text-white rounded-md px-5 py-2 hover:border-celeste01 hover:bg-white hover:text-celeste01"

@@ -27,8 +27,8 @@ export const formSerializer = ({
   startStudyDate,
   currentlyStudying,
   endStudyDate,
-  city,
-  county,
+  cityStudy,
+  countyStudy,
   studies = [],
   references = [],
   languages = [],
@@ -77,8 +77,8 @@ export const formSerializer = ({
       startStudyDate,
       currentlyStudying,
       endStudyDate,
-      county,
-      city,
+      countyStudy,
+      cityStudy,
     });
   }
   return { ...rest, references, studies, workExperiences, languages };

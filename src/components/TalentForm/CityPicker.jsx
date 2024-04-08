@@ -4,7 +4,7 @@ import FormItem from "antd/es/form/FormItem";
 import cityData from "./cityData";
 import PropTypes from "prop-types";
 
-const CityPicker = ({ className }) => {
+const CityPicker = ({ className, county, city }) => {
   const countyList = Object.keys(cityData);
   const [cities, setCities] = useState(cityData["MONTEVIDEO"]);
 
@@ -15,10 +15,10 @@ const CityPicker = ({ className }) => {
   return (
     <>
       <div className={className}>
-        <label htmlFor="register_county">Departamento</label>
-        <FormItem name="county" initialValue="MONTEVIDEO">
+        <label htmlFor={county}>Departamento</label>
+        <FormItem name={county} initialValue="MONTEVIDEO">
           <Select
-            id="regiter_county"
+            id={county}
             options={countyList.map((county) => ({
               label: county,
               value: county,
@@ -28,8 +28,8 @@ const CityPicker = ({ className }) => {
         </FormItem>
       </div>
       <div className={className}>
-        <label htmlFor="register_city">Ciudad</label>
-        <FormItem name="city">
+        <label htmlFor={city}>Ciudad</label>
+        <FormItem name={city}>
           <Select
             options={cities.map((city) => ({ label: city, value: city }))}
           />
@@ -40,7 +40,7 @@ const CityPicker = ({ className }) => {
 };
 
 CityPicker.propTypes = {
-  className: PropTypes.string, // Add prop types validation for className
+  className: PropTypes.string,
 };
 
 export default CityPicker;
