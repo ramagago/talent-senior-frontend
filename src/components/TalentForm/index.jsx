@@ -9,7 +9,6 @@ import FormLanguages from "./FormLanguages";
 import FormReferences from "./FormReferences";
 import PropTypes from "prop-types";
 import { formSerializer } from "../../utils/formSerializer";
-<<<<<<< HEAD
 import { createPerson } from "../../utils/fetchdata";
 
 const TalentForm = ({ setIsTalentModalOpen }) => {
@@ -26,25 +25,11 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
         createPerson(personData).then(()=>{ 
           setIsTalentModalOpen(false);
           message.success("Se ha registrado con éxito");})
-          .catch((error)=>{
+          .catch(()=>{
             message.error("Ocurrió un error al intentar crear la empresa")});
-    }).catch((error)=>{
+    }).catch(()=>{
       message.error("Debe completar todos los campos obligatorios")
     }) };
-=======
-
-const TalentForm = ({ setIsTalentModalOpen }) => {
-  const [currentStep, setCurrentStep] = useState(5);
-  // const [formData, setFormData] = useState(null);
-
-  const onFinish = () => {
-    // setFormData((prevFormData) => ({ ...prevFormData, ...values }));
-    const values = form.getFieldsValue(true);
-    console.log(formSerializer(values));
-    setIsTalentModalOpen(false);
-    message.success("Se ha registrado con éxito");
-  };
->>>>>>> main
 
   const [form] = Form.useForm();
 
@@ -52,11 +37,8 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
     try {
       await form.validateFields();
       setCurrentStep(currentStep + 1);
-<<<<<<< HEAD
       const values = form.getFieldsValue(true);
       console.log("form values", values)
-=======
->>>>>>> main
     } catch (err) {
       return;
     }
@@ -71,12 +53,7 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
         form={form}
         name="registerTalent"
         scrollToFirstError
-<<<<<<< HEAD
         //onFinish={onFinish}
-=======
-        onFinish={onFinish}
-        preserve
->>>>>>> main
       >
         {currentStep === 1 && <FormPersonalData />}
         {currentStep === 2 && <FormAbout />}
@@ -91,20 +68,12 @@ const TalentForm = ({ setIsTalentModalOpen }) => {
             </Button>
           )}
           {currentStep < 6 && (
-<<<<<<< HEAD
             <Button type="primary" onClick={onNext} className="ml-1">
-=======
-            <Button type="primary" onClick={onNext} className=" ml-1">
->>>>>>> main
               Next
             </Button>
           )}
           {currentStep === 6 && (
-<<<<<<< HEAD
             <Button type="primary" className="ml-1" onClick={onFinish}>
-=======
-            <Button type="primary" htmlType="submit" className="ml-1">
->>>>>>> main
               Submit
             </Button>
           )}

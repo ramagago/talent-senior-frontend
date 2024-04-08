@@ -20,7 +20,6 @@ export const formSerializer = ({
   currentlyWorking,
   endWorkDate,
   skills,
-<<<<<<< HEAD
   level,
   title,
   institute,
@@ -31,8 +30,6 @@ export const formSerializer = ({
   cityStudy,
   countyStudy,
   studies = [],
-=======
->>>>>>> main
   references = [],
   languages = [],
   workExperiences = [],
@@ -71,7 +68,6 @@ export const formSerializer = ({
       skills,
     });
   }
-<<<<<<< HEAD
   if (title) {
     studies.push({
       level,
@@ -86,7 +82,4 @@ export const formSerializer = ({
     });
   }
   return { ...rest, references, studies, workExperiences, languages };
-=======
-  return { ...rest, references };
->>>>>>> main
 };
