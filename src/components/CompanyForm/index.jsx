@@ -2,6 +2,7 @@ import { Form, Input, Button, Checkbox, message } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import TextArea from "antd/es/input/TextArea";
 import PropTypes from "prop-types";
+<<<<<<< HEAD
 import { createCompany } from "../../utils/fetchdata";
 
 const CompanyForm = ({ setIsCompanyModalOpen }) => {
@@ -16,6 +17,15 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
     } catch (error) {
       message.error("Ocurrió un error al intentar crear la empresa");
     }
+=======
+
+const CompanyForm = ({ setIsCompanyModalOpen }) => {
+  const [form] = Form.useForm();
+  const onFinish = () => {
+    console.log(form.getFieldsValue());
+    setIsCompanyModalOpen(false);
+    message.success("Se ha registrado con éxito");
+>>>>>>> main
   };
 
   return (
@@ -60,12 +70,16 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
           </div>
           <div className="lg:col-span-2">
             <label htmlFor="companyEmail">Email de negocio</label>
+<<<<<<< HEAD
             <FormItem name="companyEmail"               rules={[
                 {
                   type: "email",
                   message: "Este campo debe ser un email válido",
                 },
               ]}>
+=======
+            <FormItem name="companyEmail">
+>>>>>>> main
               <Input id="companyEmail" />
             </FormItem>
           </div>
@@ -114,10 +128,16 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
               valuePropName="checked"
               className="text-gray-400"
             >
+<<<<<<< HEAD
               <Checkbox name="termsAndConditions">
                 <a rel="stylesheet" href="" className="text-gray-400" />
                 Acepto la política de privacidad y los términos de servicio.
               </Checkbox>
+=======
+              <Checkbox name="termsAndConditions"></Checkbox>{" "}
+              <a rel="stylesheet" href="" className="text-gray-400" />
+              Acepto la política de privacidad y los términos de servicio.
+>>>>>>> main
             </FormItem>
           </div>
           <div className="grid grid-cols-subgrid col-span-2">

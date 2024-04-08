@@ -44,6 +44,7 @@ const FormPersonalData = () => {
         </div>
         <div>
           <label htmlFor="dni">Documento de Identidad</label>
+<<<<<<< HEAD
           <FormItem name="dni" initialValue="cedulaDeIdentidad"
                       rules={[
                         {
@@ -51,6 +52,9 @@ const FormPersonalData = () => {
                           message: "Este campo es requerido",
                         },
                       ]}>
+=======
+          <FormItem name="dni" initialValue="cedulaDeIdentidad">
+>>>>>>> main
             <Select
               options={[
                 {
@@ -70,6 +74,7 @@ const FormPersonalData = () => {
           </FormItem>
         </div>
         <div>
+<<<<<<< HEAD
           <label htmlFor="dniNumber">CI sin puntos ni guiones</label>
           <FormItem name="dniNumber" rules={[
                         {
@@ -78,6 +83,11 @@ const FormPersonalData = () => {
                         },
                       ]}>
             <Input name="dniNumber" id="dniNumber" />
+=======
+          <label htmlFor="surname">CI sin puntos ni guiones</label>
+          <FormItem name="dniNumber">
+            <Input name="surname" id="surname" />
+>>>>>>> main
           </FormItem>
         </div>
         <div>
@@ -90,8 +100,13 @@ const FormPersonalData = () => {
           </FormItem>
         </div>
         <div>
+<<<<<<< HEAD
           <label htmlFor="gender">Género</label>
           <FormItem name="gender">
+=======
+          <label htmlFor="genero">Género</label>
+          <FormItem name="genero">
+>>>>>>> main
             <Select
               options={[
                 {
@@ -107,16 +122,28 @@ const FormPersonalData = () => {
                   label: "Prefiero no responder",
                 },
               ]}
+<<<<<<< HEAD
               id="gender"
+=======
+              id="genero"
+>>>>>>> main
             />
           </FormItem>
         </div>
         <div className="xl:col-span-2">
+<<<<<<< HEAD
           <label htmlFor="address">
             Dirección<span className="text-red-400 text-xs"> *</span>
           </label>
           <FormItem
             name="address"
+=======
+          <label htmlFor="adress">
+            Dirección<span className="text-red-400 text-xs"> *</span>
+          </label>
+          <FormItem
+            name="adress"
+>>>>>>> main
             rules={[
               {
                 required: true,
@@ -124,7 +151,11 @@ const FormPersonalData = () => {
               },
             ]}
           >
+<<<<<<< HEAD
             <Input id="address" />
+=======
+            <Input id="adress" />
+>>>>>>> main
           </FormItem>
         </div>
         <div>
@@ -163,7 +194,11 @@ const FormPersonalData = () => {
             <Input id="email" />
           </FormItem>
         </div>
+<<<<<<< HEAD
         <CityPicker className="xl:col-span-2" county="countyPD" city="cityPD"/>
+=======
+        <CityPicker className="xl:col-span-2" />
+>>>>>>> main
       </div>
     </>
   );

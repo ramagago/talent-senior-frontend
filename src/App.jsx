@@ -14,9 +14,12 @@ import { ModalContext, useModalContextManager } from "./context/ModalContext";
 function App() {
   const modalManager = useModalContextManager();
 
+<<<<<<< HEAD
   // if (route.contains("home")) return <Home />
   // if (route.contains("login")) return <Login />
 
+=======
+>>>>>>> main
   return (
     <ModalContext.Provider value={modalManager}>
       <div className="w-screen bg-white flex flex-col items-center relative ">

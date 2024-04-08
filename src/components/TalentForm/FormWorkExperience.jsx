@@ -29,11 +29,15 @@ const FormWorkExperience = () => {
   const { Panel } = Collapse;
   const workExperiences = useWatch("workExperiences", form) || [];
 
+<<<<<<< HEAD
   const [showForm, setShowForm] = useState(
     !!form.getFieldValue("role") ||
       !!form.getFieldValue("company") ||
       !form.getFieldValue("workExperiences")?.length
   );
+=======
+  const [showForm, setShowForm] = useState(true);
+>>>>>>> main
 
   const addNewWorkExperience = async () => {
     try {

@@ -18,8 +18,12 @@ const FormLanguages = () => {
   const languages = useWatch("languages", form) || [];
 
   const [showForm, setShowForm] = useState(
+<<<<<<< HEAD
     !!form.getFieldValue("languageName") ||
       !form.getFieldValue("languages")?.length
+=======
+    !!form.getFieldValue("languageName") || !form.getFieldValue("languages")
+>>>>>>> main
   );
 
   const addNewLanguage = async () => {
@@ -49,6 +53,11 @@ const FormLanguages = () => {
         writtenLevel: 0,
         ...rest,
       });
+<<<<<<< HEAD
+=======
+      console.log("languages Add: ", languages);
+      console.log("Formulario Add: ", form.getFieldsValue(true));
+>>>>>>> main
       setShowForm(false);
     } catch {
       console.log("error en el add");
@@ -178,7 +187,11 @@ const FormLanguages = () => {
             className="transition-all border border-white bg-celeste01 text-white rounded-md px-5 py-2 hover:border-celeste01 hover:bg-white hover:text-celeste01"
             onClick={addNewLanguage}
           >
+<<<<<<< HEAD
             Agregar Idioma
+=======
+            Agregar Trabajo
+>>>>>>> main
           </button>
         </>
       )}
