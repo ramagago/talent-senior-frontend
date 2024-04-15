@@ -7,6 +7,8 @@ import { FaTrash } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 
 const FormLanguages = () => {
+
+  
   const languageLevelSlider = {
     0: <div className="text-2xs">Básico</div>,
     33: <div className="text-2xs">Intermedio</div>,
@@ -14,6 +16,7 @@ const FormLanguages = () => {
     100: <div className="text-2xs">Nativo</div>,
   };
   const form = useFormInstance();
+  const noneLanguages = useWatch("languageName", form) === "none"
   const { Panel } = Collapse;
   const languages = useWatch("languages", form) || [];
 
@@ -130,6 +133,11 @@ const FormLanguages = () => {
                       value: "german",
                       label: "Aleman",
                     },
+                    {
+                      value: "none",
+                      label: "Ninguno",
+                    },
+
                   ]}
                 />
               </FormItem>
@@ -140,6 +148,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="spokenLevel">
                 <Slider
+                disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}
@@ -153,6 +162,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="readLevel">
                 <Slider
+                disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}
@@ -166,6 +176,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="writtenLevel">
                 <Slider
+                disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}

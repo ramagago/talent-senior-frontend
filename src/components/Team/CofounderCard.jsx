@@ -12,6 +12,8 @@ const CofounderCard = ({ imgSource, title, description, linkedin }) => {
         <a
           href={linkedin}
           className="text-rosado01 text-xl sm:text-3xl underline"
+          target="_blank"
+          rel="noopener noreferrer"
         >
           Linkedin
         </a>

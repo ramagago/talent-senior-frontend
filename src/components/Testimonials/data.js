@@ -11,16 +11,4 @@ export const TestimonialsData = [
     testimony:
       "Una vez transitado el preconcepto de que a una persona de casi 50 años no le iba a interesar una posición de atención telefónica, nos encontramos con una mujer super dispuesta y capaz con la tarea. Resaltamos la capacidad y templanza a la hora de responder preguntas a los clientes con actitudes más difíciles. Cuando las tareas son adecuadas a la persona, el desarrollo profesional y de convivencia suelen ser un éxito. La integración con el equipo fue preciosa, es la más grande del grupo y la que más lo mueve.",
   },
-  {
-    name: "Rama Gago",
-    title: "Prueba 01",
-    testimony:
-      "Esto es una prueba para ver si hice las cosas bien le iba a interesar una posición de atención telefónica, nos encontramos con una mujer super dispuesta y capaz con la tarea. Resaltamos la capacidad y templanza a la hora de responder preguntas a los clientes con actitudes más difíciles. Cuando las tareas son adecuadas a la persona, el desarrollo profesional y de convivencia suelen ser un éxito. La integración con el equipo fue preciosa, es la más grande del grupo y la que más lo mueve.",
-  },
-  {
-    name: "Pedro Zunino",
-    title: "Prueba 02",
-    testimony:
-      "Esto es una segunda prueba para ver si algo de esto funciona. le iba a interesar una posición de atención telefónica, nos encontramos con una mujer super dispuesta y capaz con la tarea. Resaltamos la capacidad y templanza a la hora de responder preguntas a los clientes con actitudes más difíciles. Cuando las tareas son adecuadas a la persona, el desarrollo profesional y de convivencia suelen ser un éxito. La integración con el equipo fue preciosa, es la más grande del grupo y la que más lo mueve.",
-  },
 ];

@@ -1,10 +1,20 @@
-import { Input, Select, DatePicker } from "antd";
+import { Input, Select, DatePicker, Checkbox } from "antd";
 import FormItem from "antd/es/form/FormItem";
 import dayjs from "dayjs";
 import CityPicker from "./CityPicker";
+import { useWatch } from "antd/es/form/Form";
+import useFormInstance from "antd/es/form/hooks/useFormInstance";
 
 const FormPersonalData = () => {
   const dateFormat = "DD-MM-YYYY";
+
+  const disabledDate = (current) => {
+    // deshabilita las fechas posteriores a la fecha actual
+    return current && current > dayjs().endOf('day');
+  };
+  const phoneRegex = /^[0-9+]+$/;
+  const form = useFormInstance();
+  const liveAbroad = useWatch("liveAbroad", form) || false;
 
   return (
     <>
@@ -49,7 +59,7 @@ const FormPersonalData = () => {
                         {
                           required: true,
                           message: "Este campo es requerido",
-                        },
+                        },                                                           
                       ]}>
             <Select
               options={[
@@ -84,9 +94,16 @@ const FormPersonalData = () => {
           <label htmlFor="birthday">Fecha de Nacimiento</label>
           <FormItem
             name="birthday"
+            
             initialValue={dayjs("01-01-2024", dateFormat)}
+            rules={[
+              {
+                required: true,
+                message: 'Por favor ingresa tu fecha de nacimiento!',
+              },
+            ]}
           >
-            <DatePicker id="birthday" />
+            <DatePicker id="birthday" format={dateFormat} disabledDate={disabledDate}/>
           </FormItem>
         </div>
         <div>
@@ -113,16 +130,10 @@ const FormPersonalData = () => {
         </div>
         <div className="xl:col-span-2">
           <label htmlFor="address">
-            Dirección<span className="text-red-400 text-xs"> *</span>
+            Dirección
           </label>
           <FormItem
             name="address"
-            rules={[
-              {
-                required: true,
-                message: "Este campo es requerido",
-              },
-            ]}
           >
             <Input id="address" />
           </FormItem>
@@ -144,6 +155,10 @@ const FormPersonalData = () => {
                 required: true,
                 message: "Este campo es requerido",
               },
+              {
+                pattern: phoneRegex,
+                message: "Por favor ingresa un número de teléfono válido (solo números y +)",
+              },
             ]}
           >
             <Input id="phone" />
@@ -156,14 +171,33 @@ const FormPersonalData = () => {
             rules={[
               {
                 type: "email",
-                message: "The input is not valid E-mail!",
+                message: "Este e-mail no es váilido",
+              },
+              {
+                required: true,
+                message: "Este campo es requerido",
               },
             ]}
           >
             <Input id="email" />
           </FormItem>
         </div>
-        <CityPicker className="xl:col-span-2" county="countyPD" city="cityPD"/>
+        <CityPicker className="xl:col-span-2" county="countyPD" city="cityPD" disabled={liveAbroad}/>
+        <FormItem
+              name="liveAbroad"
+              valuePropName="checked"
+            >
+        <Checkbox name="liveAbroad">
+            Resido en el exterior.
+              
+              </Checkbox>
+              </FormItem>
+              <div><label htmlFor="currentCountry">País de residencia</label>
+              <FormItem name="currentCountry"><Input id="currentCountry" disabled={!liveAbroad}/></FormItem></div>
+              <div><label htmlFor="currentCountry">Ciudad de residencia</label>
+              <FormItem name="currentCity"><Input id="currentCity" disabled={!liveAbroad}/></FormItem></div>
+              
+              
       </div>
     </>
   );

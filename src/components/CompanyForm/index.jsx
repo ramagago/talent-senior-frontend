@@ -3,6 +3,8 @@ import FormItem from "antd/es/form/FormItem";
 import TextArea from "antd/es/input/TextArea";
 import PropTypes from "prop-types";
 import { createCompany } from "../../utils/fetchdata";
+import { Link } from 'react-router-dom';
+
 
 const CompanyForm = ({ setIsCompanyModalOpen }) => {
   const [form] = Form.useForm();
@@ -10,13 +12,13 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
     try {
       await form.validateFields();
       await createCompany(values);
-
       setIsCompanyModalOpen(false);
       message.success("Se ha registrado con éxito");
     } catch (error) {
       message.error("Ocurrió un error al intentar crear la empresa");
     }
   };
+  
 
   return (
     <>
@@ -59,11 +61,16 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
             </FormItem>
           </div>
           <div className="lg:col-span-2">
-            <label htmlFor="companyEmail">Email de negocio</label>
-            <FormItem name="companyEmail"               rules={[
+            <label htmlFor="companyEmail">Email de negocio<span className="text-red-400 text-xs"> *</span></label>
+            <FormItem name="companyEmail"               
+            rules={[
                 {
                   type: "email",
                   message: "Este campo debe ser un email válido",
+                },
+                {
+                  required: true,
+                  message: "Este campo es requerido",
                 },
               ]}>
               <Input id="companyEmail" />
@@ -113,10 +120,15 @@ const CompanyForm = ({ setIsCompanyModalOpen }) => {
               name="currentlyWorking"
               valuePropName="checked"
               className="text-gray-400"
+              rules={[
+                {
+                  required: true,
+                  message: "Debe aceptar los términos de servicio",
+                },]}
             >
               <Checkbox name="termsAndConditions">
-                <a rel="stylesheet" href="" className="text-gray-400" />
-                Acepto la política de privacidad y los términos de servicio.
+              <Link to="/terminos" target="_blank">  Acepto la política de privacidad y los términos de servicio.</Link>
+              
               </Checkbox>
             </FormItem>
           </div>

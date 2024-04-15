@@ -1,4 +1,4 @@
-import logoImage from "../../img/ts-logo-navbar.png";
+import logoImage from "../../img/ts-logo-navbar.jpg";
 import { CiMenuBurger } from "react-icons/ci";
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
@@ -47,7 +47,7 @@ const Navbar = ({ sections }) => {
           <img
             src={logoImage}
             alt="logo Talento Senior"
-            className="size-16 sm:size-20 xl:size-40"
+            className="size-32 xl:size-40"
           />
         </a>
         <div>

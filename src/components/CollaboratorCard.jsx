@@ -15,7 +15,11 @@ const CollaboratorCard = ({ imgSource, label, title, linkedin, className }) => {
       <p className=" text-gray-600 text-xl w-full ">{title}</p>
       <div className="flex items-center">
         <FaLinkedinIn className="text-rosado01 text-xl mr-2" />
-        <a href={linkedin} className="text-rosado01 text-xl underline">
+        <a 
+        href={linkedin} 
+        className="text-rosado01 text-xl underline"
+        target="_blank"
+        rel="noopener noreferrer">
           Linkedin
         </a>
       </div>
