@@ -24,11 +24,10 @@ export const formSerializer = ({
   title,
   institute,
   fieldOfStudy,
+  studySitutation,
   startStudyDate,
   currentlyStudying,
   endStudyDate,
-  cityStudy,
-  countyStudy,
   studies = [],
   references = [],
   languages = [],
@@ -46,6 +45,9 @@ export const formSerializer = ({
     });
   }
   if (languageName) {
+    readLevel ? readLevel : (readLevel = 0);
+    spokenLevel ? spokenLevel : (spokenLevel = 0);
+    writtenLevel ? writtenLevel : (writtenLevel = 0);
     languages.push({
       languageName,
       spokenLevel,
@@ -73,12 +75,11 @@ export const formSerializer = ({
       level,
       title,
       institute,
+      studySitutation,
       fieldOfStudy,
       startStudyDate,
       currentlyStudying,
       endStudyDate,
-      countyStudy,
-      cityStudy,
     });
   }
   return { ...rest, references, studies, workExperiences, languages };

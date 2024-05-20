@@ -6,19 +6,7 @@ import { useWatch } from "antd/es/form/Form";
 import { useState } from "react";
 import { FaTrash } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
-
-const OPTIONS = [
-  "Javascript",
-  "Python",
-  "Java",
-  ".Net",
-  "Genexus",
-  "C#",
-  "C++",
-  "PHP",
-  "AWS",
-  "Firebase",
-];
+import { skills } from "./workExperiencesData.json";
 
 const FormWorkExperience = () => {
   const form = useFormInstance();
@@ -102,7 +90,7 @@ const FormWorkExperience = () => {
 
   const dateFormat = "DD-MM-YYYY";
   const { TextArea } = Input;
-  const filteredOptions = OPTIONS.filter((o) => !selectedSkills?.includes(o));
+  const filteredOptions = skills.filter((o) => !selectedSkills?.includes(o));
 
   return (
     <>
@@ -204,16 +192,64 @@ const FormWorkExperience = () => {
                   id="workField"
                   options={[
                     {
-                      value: "backend",
-                      label: "Backend",
+                      value: "agro",
+                      label: "Agro, Forestal y otros.",
                     },
                     {
-                      value: "frontend",
-                      label: "Frontend",
+                      value: "comercio",
+                      label: "Comercio, Retail y Servicios.",
+                    },
+                    {
+                      value: "comunicacion",
+                      label: "Comunicaciones, Publicidad.",
+                    },
+                    {
+                      value: "construccion",
+                      label: "Contruccion y afines.",
+                    },
+                    {
+                      value: "entretenimiento",
+                      label: "Entretenimiento, Deporte y Cultura.",
+                    },
+                    {
+                      value: "industria",
+                      label: "Industria, Distribución.",
                     },
                     {
                       value: "devops",
-                      label: "Devops",
+                      label: "Servicio Consultoria, Educación y afines.",
+                    },
+                    {
+                      value: "salud",
+                      label: "Servicio de Salud.",
+                    },
+                    {
+                      value: "correo",
+                      label: "Servicios de Correos, Logistica y afines",
+                    },
+                    {
+                      value: "finanzas",
+                      label: "Servicios Financieros",
+                    },
+                    {
+                      value: "gastronomia",
+                      label: "Gastronomia, Hotelería, Transporte",
+                    },
+                    {
+                      value: "turismo",
+                      label: "Turismo",
+                    },
+                    {
+                      value: "vigilancia",
+                      label: "Vigilancia y limpieza",
+                    },
+                    {
+                      value: "tecnologia",
+                      label: "Telecomunicaciones y Tecnología",
+                    },
+                    {
+                      value: "otros",
+                      label: "Otros",
                     },
                   ]}
                 />
@@ -234,18 +270,27 @@ const FormWorkExperience = () => {
               >
                 <Select
                   id="positionLevel"
+                  // Empleado/Jefe/Gerente/Dueño/Director
                   options={[
+                    {
+                      value: "empleado",
+                      label: "Empleado",
+                    },
+                    {
+                      value: "jefe",
+                      label: "Jefe",
+                    },
                     {
                       value: "gerente",
                       label: "Gerente",
                     },
                     {
-                      value: "Dueño",
-                      label: "dueño",
+                      value: "dueño",
+                      label: "Dueño",
                     },
                     {
-                      value: "encargado",
-                      label: "Encargado",
+                      value: "dueño",
+                      label: "Dueño",
                     },
                   ]}
                 />
@@ -328,12 +373,12 @@ const FormWorkExperience = () => {
                 ]}
               >
                 <Select
-                  mode="multiple"
-                  placeholder="Máximo 10"
+                  mode="tags"
+                  placeholder="Máximo 5"
                   style={{
                     width: "100%",
                   }}
-                  maxCount={10}
+                  maxCount={5}
                   options={filteredOptions.map((item) => ({
                     value: item,
                     label: item,

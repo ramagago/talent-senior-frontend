@@ -17,7 +17,11 @@ const AmbassadorCard = ({ img, name, title, linkedin, className }) => {
       </p>
       <div className="flex items-center">
         <FaLinkedinIn className="text-rosado01 text-3xl mr-2" />
-        <a href={linkedin} className="text-rosado01 text-3xl underline">
+        <a 
+        href={linkedin}
+        className="text-rosado01 text-3xl underline"
+        target="_blank"
+        rel="noopener noreferrer">
           Linkedin
         </a>
       </div>

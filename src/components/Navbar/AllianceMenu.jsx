@@ -36,7 +36,7 @@ const AllianceMenu = ({ className }) => {
 };
 
 AllianceMenu.propTypes = {
-  className: PropTypes.object.isRequired,
+  className: PropTypes.string.isRequired,
 };
 
 export default AllianceMenu;

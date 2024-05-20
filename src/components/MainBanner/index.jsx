@@ -12,7 +12,7 @@ const MainBanner = ({ id }) => {
           Promovemos el valor de las relaciones intergeneracionales
         </h1>
         <h3 className="text-xl mx-4 text-azul01">
-          Impulsamos la fomración y reinserción del talento senior
+          Impulsamos la formación y reinserción del talento senior
         </h3>
       </div>
       <div>

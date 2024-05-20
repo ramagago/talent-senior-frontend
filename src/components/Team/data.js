@@ -9,7 +9,7 @@ export const cofoundersData = [
     img: imgIvelise,
     label: "Ivelise Reinaldo",
     description:
-      "Licenciada en Ciencias de la Comunicación de la UDELAR. Emprendedora constante. Gestora y productora de eventos y contenidos. <br>  \nCofundadora de Feria Sin Gluten, REDDER y colaboradora para + Diversity en proyectos de Liderazgo Femenino.",
+      "Licenciada en Ciencias de la Comunicación de la UDELAR. Emprendedora constante. Gestora y productora de eventos y contenidos. \nCofundadora de Feria Sin Gluten, REDDER y colaboradora para + Diversity en proyectos de Liderazgo Femenino.",
     linkedin: "https://www.linkedin.com/in/ivelise-reinaldo-863829b4/",
   },
   {

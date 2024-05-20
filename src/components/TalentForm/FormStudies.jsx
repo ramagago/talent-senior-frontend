@@ -1,6 +1,5 @@
 import FormItem from "antd/es/form/FormItem";
-import { Input, Select, DatePicker, Collapse, Checkbox } from "antd";
-import CityPicker from "./CityPicker";
+import { Input, Select, DatePicker, Collapse } from "antd";
 import dayjs from "dayjs";
 import { useWatch } from "antd/es/form/Form";
 import { useState } from "react";
@@ -21,7 +20,7 @@ const FormStudies = () => {
       !!form.getFieldValue(" startStudyDate") ||
       !form.getFieldValue("studies")?.length
   );
-  const currentlyStudying = useWatch("currentlyStudying", form);
+  // const currentlyStudying = useWatch("currentlyStudying", form);
 
   const addNewStudy = async () => {
     try {
@@ -128,7 +127,7 @@ const FormStudies = () => {
       {showForm && (
         <>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center w-full">
-            <div className="md:col-span-1">
+            <div>
               <label htmlFor="level">
                 Nivel<span className="text-red-400 text-xs"> *</span>
               </label>
@@ -145,25 +144,47 @@ const FormStudies = () => {
                   id="level"
                   options={[
                     {
+                      value: "secundario",
+                      label: "Secundario",
+                    },
+                    {
                       value: "gradoTerciario",
-                      label: "Grado Terciario",
+                      label: "Terciario",
                     },
                     {
-                      value: "postGrado",
-                      label: "Post Grado",
-                    },
-                    {
-                      value: "master",
-                      label: "Master Grado",
+                      value: "posgrado",
+                      label: "Posgrado",
                     },
                   ]}
                 />
               </FormItem>
             </div>
-            <div className="md:col-span-2">
+            <div>
               <label htmlFor="title">Título</label>
               <FormItem name="title">
                 <Input id="title" />
+              </FormItem>
+            </div>
+            <div>
+              <label htmlFor="studySitutation">Situación</label>
+              <FormItem name="studySitutation">
+                <Select
+                  id="studySitutation"
+                  options={[
+                    {
+                      value: "completed",
+                      label: "Completado",
+                    },
+                    {
+                      value: "inCourse",
+                      label: "En curso",
+                    },
+                    {
+                      value: "incomplete",
+                      label: "Incompleto",
+                    },
+                  ]}
+                />
               </FormItem>
             </div>
             <div className="md:col-span-2">
@@ -205,7 +226,6 @@ const FormStudies = () => {
               <FormItem
                 name="startStudyDate"
                 initialValue={dayjs("01-01-2024", dateFormat)}
-                //pongo required pero tiene fecha por defecto. Revisar y redefinir logica.
                 rules={[
                   {
                     required: true,
@@ -217,23 +237,12 @@ const FormStudies = () => {
               </FormItem>
             </div>
             <div>
-              <label htmlFor="situation">Situación</label>
-              <div className="flex items-baseline ml-4">
-                <FormItem name="currentlyStudying" valuePropName="checked">
-                  <Checkbox name="currentlyStudying">
-                    Actualmetne cursando
-                  </Checkbox>
-                </FormItem>
-              </div>
-            </div>
-            <div>
               <label htmlFor="endStudyDate">
                 Fecha de egreso<span className="text-red-400 text-xs"> *</span>
               </label>
               <FormItem
                 name="endStudyDate"
                 initialValue={dayjs("01-01-2024", dateFormat)}
-                //pongo required pero tiene fecha por defecto. Revisar y redefinir logica.
                 rules={[
                   {
                     required: true,
@@ -241,10 +250,9 @@ const FormStudies = () => {
                   },
                 ]}
               >
-                <DatePicker disabled={currentlyStudying} id="endStudyDate" />
+                <DatePicker disabled={""} id="endStudyDate" />
               </FormItem>
             </div>
-            <CityPicker city="cityStudy" county="countyStudy"/>
           </div>
           <button
             className="transition-all border border-white bg-celeste01 text-white rounded-md px-5 py-2 hover:border-celeste01 hover:bg-white hover:text-celeste01"
@@ -256,7 +264,6 @@ const FormStudies = () => {
       )}
       <div className="hidden">
         <FormItem name="studies">
-          {/* Evitar warning del buscador */}
           <Input />
         </FormItem>
       </div>
