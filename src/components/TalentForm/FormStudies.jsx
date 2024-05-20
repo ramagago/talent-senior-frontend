@@ -144,16 +144,16 @@ const FormStudies = () => {
                   id="level"
                   options={[
                     {
+                      value: "secundario",
+                      label: "Secundario",
+                    },
+                    {
                       value: "gradoTerciario",
-                      label: "Grado Terciario",
+                      label: "Terciario",
                     },
                     {
-                      value: "postGrado",
-                      label: "Post Grado",
-                    },
-                    {
-                      value: "master",
-                      label: "Master Grado",
+                      value: "posgrado",
+                      label: "Posgrado",
                     },
                   ]}
                 />
@@ -168,7 +168,7 @@ const FormStudies = () => {
             <div>
               <label htmlFor="studySitutation">Situación</label>
               <FormItem name="studySitutation">
-              <Select
+                <Select
                   id="studySitutation"
                   options={[
                     {
@@ -177,7 +177,7 @@ const FormStudies = () => {
                     },
                     {
                       value: "inCourse",
-                      label: "Cursando",
+                      label: "En curso",
                     },
                     {
                       value: "incomplete",

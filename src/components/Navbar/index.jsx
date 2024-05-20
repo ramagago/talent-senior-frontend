@@ -47,7 +47,7 @@ const Navbar = ({ sections }) => {
           <img
             src={logoImage}
             alt="logo Talento Senior"
-            className="size-32 xl:size-40"
+            className="size-24 xl:size-40"
           />
         </a>
         <div>

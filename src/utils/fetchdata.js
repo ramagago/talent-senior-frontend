@@ -1,5 +1,4 @@
 // apiService.js
-
 const BASE_URL = "http://localhost:3000"; // URL de tu backend Nest.js
 
 export const createPerson = async (personData) => {
@@ -14,7 +13,7 @@ export const createPerson = async (personData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message.join(', '));
+      throw new Error(errorData.message.join(", "));
     }
 
     const data = await response.json();
@@ -37,7 +36,7 @@ export const createCompany = async (companyData) => {
 
     if (!response.ok) {
       const errorData = await response.json();
-      throw new Error(errorData.message.join(', '));
+      throw new Error(errorData.message.join(", "));
     }
 
     const data = await response.json();

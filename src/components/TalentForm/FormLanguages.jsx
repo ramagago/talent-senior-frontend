@@ -7,16 +7,13 @@ import { FaTrash } from "react-icons/fa";
 import { FaCirclePlus } from "react-icons/fa6";
 
 const FormLanguages = () => {
-
-  
   const languageLevelSlider = {
     0: <div className="text-2xs">Básico</div>,
-    33: <div className="text-2xs">Intermedio</div>,
-    66: <div className="text-2xs">Avanzado</div>,
-    100: <div className="text-2xs">Nativo</div>,
+    50: <div className="text-2xs">Intermedio</div>,
+    100: <div className="text-2xs">Avanzado</div>,
   };
   const form = useFormInstance();
-  const noneLanguages = useWatch("languageName", form) === "none"
+  const noneLanguages = useWatch("languageName", form) === "none";
   const { Panel } = Collapse;
   const languages = useWatch("languages", form) || [];
 
@@ -131,13 +128,16 @@ const FormLanguages = () => {
                     },
                     {
                       value: "german",
-                      label: "Aleman",
+                      label: "Alemán",
+                    },
+                    {
+                      value: "french",
+                      label: "Francés",
                     },
                     {
                       value: "none",
                       label: "Ninguno",
                     },
-
                   ]}
                 />
               </FormItem>
@@ -148,7 +148,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="spokenLevel">
                 <Slider
-                disabled={noneLanguages}
+                  disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}
@@ -162,7 +162,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="readLevel">
                 <Slider
-                disabled={noneLanguages}
+                  disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}
@@ -176,7 +176,7 @@ const FormLanguages = () => {
               </label>
               <FormItem name="writtenLevel">
                 <Slider
-                disabled={noneLanguages}
+                  disabled={noneLanguages}
                   marks={languageLevelSlider}
                   step={null}
                   initialValue={0}
