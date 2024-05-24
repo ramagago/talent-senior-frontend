@@ -20,7 +20,7 @@ export const formSerializer = ({
   currentlyWorking,
   endWorkDate,
   skills,
-  level,
+  levelOfStudy,
   title,
   institute,
   fieldOfStudy,
@@ -72,7 +72,7 @@ export const formSerializer = ({
   }
   if (title) {
     studies.push({
-      level,
+      levelOfStudy,
       title,
       institute,
       studySitutation,
