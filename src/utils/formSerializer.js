@@ -28,6 +28,11 @@ export const formSerializer = ({
   startStudyDate,
   currentlyStudying,
   endStudyDate,
+  liveAbroad,
+  countyPD,
+  cityPD,
+  currentCity,
+  currentCountry,
   studies = [],
   references = [],
   languages = [],
@@ -82,5 +87,16 @@ export const formSerializer = ({
       endStudyDate,
     });
   }
-  return { ...rest, references, studies, workExperiences, languages };
+  if (liveAbroad) {
+    (cityPD = currentCity), (countyPD = currentCountry);
+  }
+  return {
+    ...rest,
+    references,
+    studies,
+    workExperiences,
+    cityPD,
+    countyPD,
+    languages,
+  };
 };

@@ -1,5 +1,5 @@
 // apiService.js
-const BASE_URL = "http://localhost:3000"; // URL de tu backend Nest.js
+const BASE_URL = import.meta.env.API_SERVER_URL; // URL de tu backend Nest.js
 
 export const createPerson = async (personData) => {
   try {
