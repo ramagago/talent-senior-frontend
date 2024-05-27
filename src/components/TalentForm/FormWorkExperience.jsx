@@ -285,8 +285,8 @@ const FormWorkExperience = () => {
                       label: "Gerente",
                     },
                     {
-                      value: "dueño",
-                      label: "Dueño",
+                      value: "direcor",
+                      label: "Director",
                     },
                     {
                       value: "dueño",

@@ -14,7 +14,7 @@ const FormStudies = () => {
   const { Panel } = Collapse;
   const studies = useWatch("studies", form) || [];
   const [showForm, setShowForm] = useState(
-    !!form.getFieldValue("level") ||
+    !!form.getFieldValue("levelOfStudy") ||
       !!form.getFieldValue("institute") ||
       !!form.getFieldValue("fieldOfStudy") ||
       !!form.getFieldValue(" startStudyDate") ||
@@ -26,7 +26,7 @@ const FormStudies = () => {
     try {
       await form.validateFields();
       const {
-        level,
+        levelOfStudy,
         title,
         institute,
         fieldOfStudy,
@@ -42,7 +42,7 @@ const FormStudies = () => {
         studies: [
           ...studies,
           {
-            level,
+            levelOfStudy,
             title,
             institute,
             fieldOfStudy,
@@ -53,7 +53,7 @@ const FormStudies = () => {
             cityStudy,
           },
         ],
-        level: undefined,
+        levelOfStudy: undefined,
         title: undefined,
         institute: undefined,
         fieldOfStudy: undefined,
@@ -94,7 +94,7 @@ const FormStudies = () => {
                 </button>
               }
             >
-              <p>Nivel: {study.level}</p>
+              <p>Nivel: {study.levelOfStudy}</p>
               <p>Institución: {study.institute}</p>
               <p>Área de estudio: {study.fieldOfStudy}</p>
               <p>
@@ -128,11 +128,11 @@ const FormStudies = () => {
         <>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2 items-center w-full">
             <div>
-              <label htmlFor="level">
+              <label htmlFor="levelOfStudy">
                 Nivel<span className="text-red-400 text-xs"> *</span>
               </label>
               <FormItem
-                name="level"
+                name="levelOfStudy"
                 rules={[
                   {
                     required: true,
@@ -141,7 +141,7 @@ const FormStudies = () => {
                 ]}
               >
                 <Select
-                  id="level"
+                  id="levelOfStudy"
                   options={[
                     {
                       value: "secundario",
@@ -205,7 +205,8 @@ const FormStudies = () => {
             </div>
             <div className="md:col-span-1">
               <label htmlFor="fieldOfStudy">
-                Área de estudio<span className="text-red-400 text-xs"> *</span>
+                Área de estudio/Bachillerato
+                <span className="text-red-400 text-xs"> *</span>
               </label>
               <FormItem
                 name="fieldOfStudy"
