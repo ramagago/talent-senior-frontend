@@ -37,7 +37,7 @@ export const collaboratorsData = [
   {
     img: imgLauraRodriguez,
     label: "Laura Rodriguez",
-    title: "Psicóloga",
+    title: "Coach",
     linkedin: "https://www.linkedin.com/in/alvaro-matteo-745a2573/",
   },
 ];
