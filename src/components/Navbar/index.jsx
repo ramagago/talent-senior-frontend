@@ -40,7 +40,7 @@ const Navbar = ({ sections }) => {
   return (
     <nav
       ref={divRef}
-      className="w-full fixed top-0 bg-white flex justify-center z-50"
+      className="w-full fixed top-0 bg-white flex justify-center z-40"
     >
       <div className="w-full flex justify-between items-center h-24 ml-4 xl:h-48 lg:w-[1280px]">
         <a href="#mainBanner">

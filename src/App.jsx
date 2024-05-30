@@ -16,8 +16,16 @@ import Faq from "./components/Faq/Faq";
 
 function App() {
   const modalManager = useModalContextManager();
+
   return (
     <ModalContext.Provider value={modalManager}>
+      {modalManager.isVisible && (
+        <ServicesInfo
+          selectedService={modalManager.title}
+          selectedServiceInfo={modalManager.info}
+          onClose={() => modalManager.setIsVisible(false)}
+        />
+      )}
       <Router>
         <Routes>
           <Route
@@ -43,13 +51,6 @@ function App() {
           <Route path="/terminos" element={<TermsAndConditions />} />
           <Route path="/faq" element={<Faq />} />
         </Routes>
-        {modalManager.isVisible && (
-          <ServicesInfo
-            selectedService={modalManager.title}
-            selectedServiceInfo={modalManager.info}
-            onClose={() => modalManager.setIsVisible(false)}
-          />
-        )}
       </Router>
     </ModalContext.Provider>
   );
