@@ -160,8 +160,18 @@ const FormStudies = () => {
               </FormItem>
             </div>
             <div>
-              <label htmlFor="title">Título</label>
-              <FormItem name="title">
+              <label htmlFor="title">
+                Título<span className="text-red-400 text-xs"> *</span>
+              </label>
+              <FormItem
+                name="title"
+                rules={[
+                  {
+                    required: true,
+                    message: "Este campo es requerido",
+                  },
+                ]}
+              >
                 <Input id="title" />
               </FormItem>
             </div>

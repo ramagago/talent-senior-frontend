@@ -187,7 +187,15 @@ const FormWorkExperience = () => {
               <label htmlFor="workField">
                 Rubro o área<span className="text-red-400 text-xs"> *</span>
               </label>
-              <FormItem name="workField">
+              <FormItem
+                name="workField"
+                rules={[
+                  {
+                    required: true,
+                    message: "Este campo es requerido",
+                  },
+                ]}
+              >
                 <Select
                   id="workField"
                   options={[

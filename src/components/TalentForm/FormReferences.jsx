@@ -128,7 +128,7 @@ const FormReferences = () => {
                       },
                       {
                         value: "laboral",
-                        label: "laboral",
+                        label: "Laboral",
                       },
                     ]}
                   />

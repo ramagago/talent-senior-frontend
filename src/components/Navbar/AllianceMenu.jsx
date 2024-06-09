@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import nudaDrop from "../../img/ts-nudadrop.png";
 import apoyoFibra from "../../img/ts-apoyofibra.png";
+import quintoImpacto from "../../img/ts-quinto-impacto.png";
 
 const AllianceMenu = ({ className }) => {
   return (
@@ -29,6 +30,21 @@ const AllianceMenu = ({ className }) => {
           rel="noopener noreferrer"
         >
           Apoyo Fibra
+        </a>
+      </div>
+      <div className="flex justify-end items-center">
+        <img
+          src={quintoImpacto}
+          alt="quinto impacto logo"
+          className="w-5 h-5 mr-2"
+        />
+        <a
+          href="https://quintoimpacto.net/"
+          className="text-gray-500 texl-sm xl:text-lg mt-2"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Quinto Impacto
         </a>
       </div>
     </div>
