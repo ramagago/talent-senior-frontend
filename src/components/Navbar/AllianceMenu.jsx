@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import nudaDrop from "../../img/ts-nudadrop.png";
 import apoyoFibra from "../../img/ts-apoyofibra.png";
 import quintoImpacto from "../../img/ts-quinto-impacto.png";
-
+import pyxisLogo from "../../img/ts-pyxis-tech.png";
 const AllianceMenu = ({ className }) => {
   return (
     <div
@@ -45,6 +45,17 @@ const AllianceMenu = ({ className }) => {
           rel="noopener noreferrer"
         >
           Quinto Impacto
+        </a>
+      </div>
+      <div className="flex justify-end items-center mt-2">
+        <img src={pyxisLogo} alt="pyxis logo" className="w-5 h-5 mr-2" />
+        <a
+          href="https://pyxis.tech/"
+          className="text-gray-500 texl-sm xl:text-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Pyxis
         </a>
       </div>
     </div>

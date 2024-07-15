@@ -1,4 +1,4 @@
-import { FaFacebookF, FaInstagram } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 // import { Link } from "react-router-dom";
 
@@ -63,11 +63,20 @@ const Footer = () => {
           </div>
         </a>
         <a
-          href="info@talentosenior.uy"
+          href="https://www.linkedin.com/company/talento-senior1-uy/"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <div className="text-white text-2xl md:text-3xl md:p-5 hover:bg-azul01 hover:cursor-pointer transition ease-in-out duration-200 bg-celeste01 rounded-full p-3">
+          <div className="text-white text-2xl md:text-3xl md:p-5 hover:bg-azul01 hover:cursor-pointer transition ease-in-out duration-200 bg-celeste01 rounded-full p-3 mr-6">
+            <FaLinkedin />
+          </div>
+        </a>
+        <a
+          href="mailto:info@talentosenior.uy"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <div className="text-white text-2xl md:text-3xl md:p-5 hover:bg-azul01 hover:cursor-pointer transition ease-in-out duration-200 bg-celeste01 rounded-full p-3 ">
             <FiMail />
           </div>
         </a>
