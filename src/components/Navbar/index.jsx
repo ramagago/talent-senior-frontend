@@ -57,9 +57,11 @@ const Navbar = ({ sections }) => {
           >
             <CiMenuBurger className="size-12" />
           </button>
-          {isMenuOpen && (
-            <MobileMenu sections={sections} currentSection={currentSection} />
-          )}
+          <MobileMenu
+            sections={sections}
+            currentSection={currentSection}
+            isMenuOpen={isMenuOpen}
+          />
           <DesktopMenu sections={sections} currentSection={currentSection} />
         </div>
       </div>
