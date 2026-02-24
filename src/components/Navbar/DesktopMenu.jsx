@@ -70,11 +70,28 @@ const DesktopMenu = ({ sections, currentSection }) => {
           className="flex items-center px-6 py-4 text-1xl cursor-pointer  hover:text-gray-500 active:text-gray-00"
           onClick={toggleAlliance}
         >
-          ALIANZAS <IoIosArrowDown className="mx-1" />
+          ALIANZAS{" "}
+          <IoIosArrowDown
+            className={`mx-1 transition-transform duration-200 ease-out ${
+              isAllianceOpen ? "rotate-180" : ""
+            }`}
+          />
         </li>
-        {isAllianceOpen && (
-          <AllianceMenu className="absolute right-0 bottom-0 translate-y-full" />
-        )}
+        <div
+          className={`absolute right-0 bottom-0 translate-y-full transition-all duration-200 ease-out ${
+            isAllianceOpen
+              ? "opacity-100 translate-y-full"
+              : "opacity-0 translate-y-3/4 pointer-events-none"
+          }`}
+        >
+          <div
+            className={`transition-opacity duration-200 ${
+              isAllianceOpen ? "opacity-100 delay-200" : "opacity-0 delay-0"
+            }`}
+          >
+            <AllianceMenu className="" />
+          </div>
+        </div>
       </ul>
     </>
   );
