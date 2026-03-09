@@ -90,7 +90,7 @@ const MobileMenu = ({ sections, currentSection, isMenuOpen }) => {
       >
         <div
           className={`transition-opacity duration-200 ${
-            isAllianceOpen ? "opacity-100 delay-200" : "opacity-0 delay-0"
+            isAllianceOpen ? "opacity-100" : "opacity-0 delay-0"
           }`}
         >
           <AllianceMenu className="" />
