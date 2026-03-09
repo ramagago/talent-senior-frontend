@@ -3,6 +3,7 @@ import { FaFacebookF, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { FiMail } from "react-icons/fi";
 import { RxCross1 } from "react-icons/rx";
 // import { Link } from "react-router-dom";
+import logoTalentoTech from "../../img/talento-tech-+-45.png";
 
 const PRIVACY_POLICY_PARAGRAPHS = [
   "Este documento explica qué información personal podemos recopilar sobre vos,  como candidato o como empresa en relación con nuestro compromiso de servicios y cómo esta información personal puede ser utilizada y compartida. ",
@@ -19,49 +20,63 @@ const Footer = () => {
 
   return (
     <div className="w-screen xl:w-[1280px] flex flex-col">
-      <div className="flex flex-col sm:flex-row justify-start items-start my-12 ml-6">
-        <div className="flex flex-col mr-6">
-          <ul className="text-gray-500 text-lg my-2">
-            <a href="#services">
-              <li className=" hover:text-gray-400 hover:cursor-pointer">
-                Servicios
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start items-start my-12 ml-6 pr-6">
+        <div className="flex flex-col sm:flex-row sm:flex-wrap">
+          <div className="flex flex-col mr-6">
+            <ul className="text-gray-500 text-lg my-2">
+              <a href="#services">
+                <li className=" hover:text-gray-400 hover:cursor-pointer">
+                  Servicios
+                </li>
+              </a>
+              <a href="#team">
+                <li className=" hover:text-gray-400 hover:cursor-pointer">
+                  Quienes somos
+                </li>
+              </a>
+              <a href="#purpose">
+                <li className=" hover:text-gray-400 hover:cursor-pointer">
+                  Propósito
+                </li>
+              </a>
+              <a href="#ambassadors">
+                <li className=" hover:text-gray-400 hover:cursor-pointer">
+                  Embajadores
+                </li>
+              </a>
+            </ul>
+          </div>
+          <div className="flex flex-col sm:ml-6">
+            <ul className="text-gray-500 text-lg my-2">
+              {/* <li className=" hover:text-gray-400 hover:cursor-pointer">
+              <Link to="/terminos" target="_blank"> Preguntas frecuentes </Link>
+              </li> */}
+              <a href="#contact">
+                <li className=" hover:text-gray-400 hover:cursor-pointer">
+                  Contáctanos
+                </li>
+              </a>
+              <li
+                className=" hover:text-gray-400 hover:cursor-pointer"
+                onClick={() => setIsPrivacyModalOpen(true)}
+              >
+                Política de privacidad
               </li>
-            </a>
-            <a href="#team">
-              <li className=" hover:text-gray-400 hover:cursor-pointer">
-                Quienes somos
-              </li>
-            </a>
-            <a href="#purpose">
-              <li className=" hover:text-gray-400 hover:cursor-pointer">
-                Propósito
-              </li>
-            </a>
-            <a href="#ambassadors">
-              <li className=" hover:text-gray-400 hover:cursor-pointer">
-                Embajadores
-              </li>
-            </a>
-          </ul>
+            </ul>
+          </div>
         </div>
-        <div className="flex flex-col sm:ml-6">
-          <ul className="text-gray-500 text-lg my-2">
-            {/* <li className=" hover:text-gray-400 hover:cursor-pointer">
-            <Link to="/terminos" target="_blank"> Preguntas frecuentes </Link>
-            </li> */}
-            <a href="#contact">
-              <li className=" hover:text-gray-400 hover:cursor-pointer">
-                Contáctanos
-              </li>
-            </a>
-            <li
-              className=" hover:text-gray-400 hover:cursor-pointer"
-              onClick={() => setIsPrivacyModalOpen(true)}
-            >
-              Política de privacidad
-            </li>
-          </ul>
-        </div>
+        <a
+          href="https://www.talentotech.uy/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="cursor-pointer"
+        >
+          <img
+            src={logoTalentoTech}
+            alt="Talento Tech +45"
+            className="mt-6 sm:mt-0 sm:flex-shrink-0 max-h-16 w-auto object-contain"
+          />
+        </a>
       </div>
       <div className="flex justify-center mb-12">
         <a
