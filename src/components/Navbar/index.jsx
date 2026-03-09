@@ -1,9 +1,9 @@
 import logoImage from "../../img/ts-logo-navbar.jpg";
-import { CiMenuBurger } from "react-icons/ci";
 import { useState, useEffect, useRef } from "react";
 import PropTypes from "prop-types";
 import MobileMenu from "./MobileMenu";
 import DesktopMenu from "./DesktopMenu";
+import BurgerIcon from "./BurgerIcon";
 
 const Navbar = ({ sections }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -51,15 +51,12 @@ const Navbar = ({ sections }) => {
           />
         </a>
         <div>
-          <button
-            onClick={toggleMenu}
-            className="mr-4 xl:hidden bg-transparent"
-          >
-            <CiMenuBurger className="size-12" />
-          </button>
-          {isMenuOpen && (
-            <MobileMenu sections={sections} currentSection={currentSection} />
-          )}
+          <BurgerIcon isOpen={isMenuOpen} onClick={toggleMenu} />
+          <MobileMenu
+            sections={sections}
+            currentSection={currentSection}
+            isMenuOpen={isMenuOpen}
+          />
           <DesktopMenu sections={sections} currentSection={currentSection} />
         </div>
       </div>
