@@ -78,15 +78,18 @@ const DesktopMenu = ({ sections, currentSection }) => {
           />
         </li>
         <div
-          className={`absolute right-0 bottom-0 translate-y-full transition-all duration-200 ease-out ${
-            isAllianceOpen
-              ? "opacity-100 translate-y-full"
-              : "opacity-0 translate-y-3/4 pointer-events-none"
+          className={`absolute right-0 bottom-0 transition-all duration-200 ease-out ${
+            isAllianceOpen ? "opacity-100" : "opacity-0 pointer-events-none"
           }`}
+          style={{
+            transform: isAllianceOpen
+              ? "translateY(100%)"
+              : "translateY(calc(100% - 0.75rem))",
+          }}
         >
           <div
             className={`transition-opacity duration-200 ${
-              isAllianceOpen ? "opacity-100 delay-200" : "opacity-0 delay-0"
+              isAllianceOpen ? "opacity-100" : "opacity-0 delay-0"
             }`}
           >
             <AllianceMenu className="" />
