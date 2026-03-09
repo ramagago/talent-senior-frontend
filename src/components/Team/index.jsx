@@ -1,7 +1,7 @@
 import { cofoundersData, collaboratorsData } from "./data";
 import CofounderCard from "./CofounderCard";
 import CollaboratorCard from "../CollaboratorCard";
-import imgBanner from "../../img/ts-banner-team-v2.png";
+import imgBanner from "../../img/ts-banner-team.png";
 import PropTypes from "prop-types";
 
 const Team = ({ id }) => {
@@ -49,7 +49,7 @@ const Team = ({ id }) => {
         <img
           src={imgBanner}
           alt="Dos personas en una oficina saludandose"
-          className="w-screen object-cover max-h-[500px]"
+          className="  w-screen object-cover "
         />
       </div>
     </div>
@@ -60,3 +60,5 @@ Team.propTypes = {
   id: PropTypes.string.isRequired,
 };
 export default Team;
+
+

@@ -1,4 +1,4 @@
-import imgPurpose from "../../img/ts-purpose.jpg";
+import imgPurpose from "../../img/ts-purpose.png";
 
 export default {
   img: imgPurpose,
