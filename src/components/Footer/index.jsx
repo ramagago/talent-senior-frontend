@@ -74,7 +74,7 @@ const Footer = () => {
           <img
             src={logoTalentoTech}
             alt="Talento Tech +45"
-            className="mt-6 sm:mt-0 sm:flex-shrink-0 max-h-16 w-auto object-contain"
+            className="mt-6 sm:mt-0 sm:flex-shrink-0 max-h-32 w-auto object-contain"
           />
         </a>
       </div>

@@ -22,14 +22,14 @@ const AllianceMenu = ({ className }) => {
       </div>
       <h4 className="font-black text-sm xl:text-lg my-2">Alianzas Diversas</h4>
       <div className="flex justify-end">
-        <img src={apoyoFibra} alt="apoyoFibra logo" className="w-8 h-8 " />
+        <img src={apoyoFibra} alt="apoyoFibras logo" className="w-8 h-8 " />
         <a
           href="https://www.fibras.org/"
           className="text-gray-500 texl-sm xl:text-lg"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Apoyo Fibra
+          Apoyo Fibras
         </a>
       </div>
       <div className="flex justify-end items-center">
