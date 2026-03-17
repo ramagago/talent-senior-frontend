@@ -16,7 +16,7 @@ export default [
     label: "Reciclaje Profesional",
     description: "Herramientas para la empleabilidad",
     information:
-      "Diseño y aplicación de planes de actualización o reciclaje profesional La actualización y la reconversión laboral es una necesidad permanente para los profesionales y las empresas que los emplean. Contar con colaboradores actualizados, comprometidos e innovadores, es la mejor inversión que puede realizar la organización para potenciar su competitividad. Los acompañamos a detectar las necesidades existentes e implementamos instancias de capacitación, ya sea de habilidades técnicas, habilidades transversales o ambas.",
+      "Diseño y aplicación de planes de actualización o reciclaje profesional. La actualización y la reconversión laboral es una necesidad permanente para los profesionales y las empresas que los emplean. Contar con colaboradores actualizados, comprometidos e innovadores, es la mejor inversión que puede realizar la organización para potenciar su competitividad. Los acompañamos a detectar las necesidades existentes e implementamos instancias de capacitación, ya sea de habilidades técnicas, habilidades transversales o ambas.",
   },
   {
     img: imgConsultores,

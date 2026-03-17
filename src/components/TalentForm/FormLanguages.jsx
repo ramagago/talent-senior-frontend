@@ -19,7 +19,7 @@ const FormLanguages = () => {
 
   const [showForm, setShowForm] = useState(
     !!form.getFieldValue("languageName") ||
-      !form.getFieldValue("languages")?.length
+      !form.getFieldValue("languages")?.length,
   );
 
   const addNewLanguage = async () => {
@@ -120,7 +120,7 @@ const FormLanguages = () => {
                     },
                     {
                       value: "portuges",
-                      label: "Portugés",
+                      label: "Portugués",
                     },
                     {
                       value: "italian",
