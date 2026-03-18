@@ -20,7 +20,7 @@ const FormWorkExperience = () => {
   const [showForm, setShowForm] = useState(
     !!form.getFieldValue("role") ||
       !!form.getFieldValue("company") ||
-      !form.getFieldValue("workExperiences")?.length
+      !form.getFieldValue("workExperiences")?.length,
   );
 
   const addNewWorkExperience = async () => {
@@ -81,7 +81,7 @@ const FormWorkExperience = () => {
   const deleteWorkExperience = (workExperienceIndex) => {
     form.setFieldValue(
       "workExperiences",
-      workExperiences.toSpliced(workExperienceIndex, 1)
+      workExperiences.toSpliced(workExperienceIndex, 1),
     );
     if (workExperiences.length < 2) {
       setShowForm(true);
@@ -344,7 +344,7 @@ const FormWorkExperience = () => {
               <div className="flex items-baseline ml-4">
                 <FormItem name="currentlyWorking" valuePropName="checked">
                   <Checkbox name="currentlyWorking">
-                    Actualmetne trabajando
+                    Actualmente trabajando
                   </Checkbox>
                 </FormItem>
               </div>
@@ -368,7 +368,7 @@ const FormWorkExperience = () => {
             </div>
             <div className="sm:col-span-2">
               <label htmlFor="endWorkDate">
-                Conociemientos
+                Conocimientos
                 <span className="text-red-400 text-xs"> *</span>
               </label>
               <FormItem

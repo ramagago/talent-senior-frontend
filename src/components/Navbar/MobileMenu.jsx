@@ -3,13 +3,19 @@ import AllianceMenu from "./AllianceMenu";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 
-const MobileMenu = ({ sections, currentSection }) => {
+const MobileMenu = ({ sections, currentSection, isMenuOpen }) => {
   const [isAllianceOpen, setAllianceOpen] = useState(false);
   const toggleAlliance = () => {
     setAllianceOpen(!isAllianceOpen);
   };
   return (
-    <ul className="fixed top-24 right-0 flex flex-col justify-center text-sm bg-white items-center xl:hidden w-48 ">
+    <ul
+      className={`fixed top-24 right-0 flex flex-col justify-center text-sm bg-white items-center xl:hidden w-48 transition-all duration-200 ease-out ${
+        isMenuOpen
+          ? "opacity-100 translate-y-0"
+          : "opacity-0 -translate-y-3 pointer-events-none"
+      }`}
+    >
       <a href="#services">
         <li
           className={`px-7 py-4 ${
@@ -68,11 +74,28 @@ const MobileMenu = ({ sections, currentSection }) => {
         className="flex items-center px-7 py-4 cursor-pointer  hover:text-gray-500 active:text-gray-00"
         onClick={toggleAlliance}
       >
-        ALIANZAS <IoIosArrowDown className="mx-1" />
+        ALIANZAS{" "}
+        <IoIosArrowDown
+          className={`mx-1 transition-transform duration-200 ease-out ${
+            isAllianceOpen ? "rotate-180" : ""
+          }`}
+        />
       </li>
-      {isAllianceOpen && (
-        <AllianceMenu className="absolute right-0 bottom-0 translate-y-full" />
-      )}
+      <div
+        className={`absolute right-0 bottom-1 translate-y-full transition-all duration-200 ease-out ${
+          isAllianceOpen
+            ? "opacity-100 translate-y-full"
+            : "opacity-0 translate-y-3/4 pointer-events-none"
+        }`}
+      >
+        <div
+          className={`transition-opacity duration-200 ${
+            isAllianceOpen ? "opacity-100" : "opacity-0 delay-0"
+          }`}
+        >
+          <AllianceMenu className="" />
+        </div>
+      </div>
     </ul>
   );
 };
@@ -80,6 +103,7 @@ const MobileMenu = ({ sections, currentSection }) => {
 MobileMenu.propTypes = {
   sections: PropTypes.object.isRequired,
   currentSection: PropTypes.string.isRequired,
+  isMenuOpen: PropTypes.bool.isRequired,
 };
 
 export default MobileMenu;

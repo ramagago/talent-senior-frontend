@@ -4,7 +4,11 @@ import { FaLinkedin } from "react-icons/fa";
 const CofounderCard = ({ imgSource, title, description, linkedin }) => {
   return (
     <div className="flex flex-col justify-center items-center w-96 mx-4 text-center mb-16">
-      <img src={imgSource} alt="" className="h-xl w-96" />
+      <img
+        src={imgSource}
+        alt=""
+        className="lg:h-96 lg:w-96 h-48 w-48 object-cover rounded-full saturate-0"
+      />
       <h2 className="text-3xl sm:text-5xl font-bold my-6">{title}</h2>
       <p className="mb-6 text-sm">{description}</p>
       <div className="flex items-center">
